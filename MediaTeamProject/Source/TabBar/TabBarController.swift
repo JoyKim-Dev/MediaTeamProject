@@ -44,7 +44,7 @@ final class TabBarController: UITabBarController {
             var viewController: UIViewController {
                 switch self {
                 case .home:
-                    return SearchViewController()
+                    return HomeViewController()
                 case .topSearch:
                     return SearchViewController()
                 case .download:
