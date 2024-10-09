@@ -23,8 +23,8 @@
 		72A3AB1A2CB64094005FBCDD /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A3AB192CB64094005FBCDD /* SearchViewModel.swift */; };
 		72A3AB1C2CB6409E005FBCDD /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A3AB1B2CB6409E005FBCDD /* SearchViewController.swift */; };
 		72A3AB1F2CB6418C005FBCDD /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 72A3AB1E2CB6418C005FBCDD /* SnapKit */; };
-		72A3AB222CB6562D005FBCDD /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A3AB212CB6562D005FBCDD /* AppColor.swift */; };
-		72A3AB242CB656AA005FBCDD /* AppIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A3AB232CB656AA005FBCDD /* AppIcon.swift */; };
+		72A3AB272CB66949005FBCDD /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A3AB262CB66949005FBCDD /* AppColors.swift */; };
+		72A3AB292CB6698B005FBCDD /* AppIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A3AB282CB6698B005FBCDD /* AppIcon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,8 +43,8 @@
 		72A3AB172CB64056005FBCDD /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		72A3AB192CB64094005FBCDD /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		72A3AB1B2CB6409E005FBCDD /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
-		72A3AB212CB6562D005FBCDD /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppColor.swift; path = ../../../../../../../../Documents/AppColor.swift; sourceTree = "<group>"; };
-		72A3AB232CB656AA005FBCDD /* AppIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppIcon.swift; path = ../../../../../../../../Documents/AppIcon.swift; sourceTree = "<group>"; };
+		72A3AB262CB66949005FBCDD /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
+		72A3AB282CB6698B005FBCDD /* AppIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIcon.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +102,7 @@
 		72A3AB012CB63BF2005FBCDD /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				72A3AB202CB655E3005FBCDD /* Utilities */,
+				72A3AB252CB66938005FBCDD /* Utilities */,
 				72A3AB032CB63C83005FBCDD /* Base */,
 				72A3AB132CB63FAC005FBCDD /* Scenes */,
 			);
@@ -163,11 +163,11 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		72A3AB202CB655E3005FBCDD /* Utilities */ = {
+		72A3AB252CB66938005FBCDD /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				72A3AB212CB6562D005FBCDD /* AppColor.swift */,
-				72A3AB232CB656AA005FBCDD /* AppIcon.swift */,
+				72A3AB262CB66949005FBCDD /* AppColors.swift */,
+				72A3AB282CB6698B005FBCDD /* AppIcon.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -253,15 +253,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				72A3AB1C2CB6409E005FBCDD /* SearchViewController.swift in Sources */,
-				72A3AB222CB6562D005FBCDD /* AppColor.swift in Sources */,
-				72A3AB242CB656AA005FBCDD /* AppIcon.swift in Sources */,
 				72A3AB122CB63D4A005FBCDD /* BaseTableViewCell.swift in Sources */,
+				72A3AB292CB6698B005FBCDD /* AppIcon.swift in Sources */,
 				72A3AB072CB63CA6005FBCDD /* BaseViewController.swift in Sources */,
 				72A3AB102CB63D34005FBCDD /* BaseCollectionViewCell.swift in Sources */,
 				3582A4EB2CB637DA0031DDB3 /* AppDelegate.swift in Sources */,
 				72A3AB182CB64056005FBCDD /* SearchView.swift in Sources */,
 				3582A4ED2CB637DA0031DDB3 /* SceneDelegate.swift in Sources */,
 				72A3AB1A2CB64094005FBCDD /* SearchViewModel.swift in Sources */,
+				72A3AB272CB66949005FBCDD /* AppColors.swift in Sources */,
 				72A3AB052CB63C95005FBCDD /* BaseView.swift in Sources */,
 				72A3AB0E2CB63D0F005FBCDD /* BaseViewModel.swift in Sources */,
 			);
