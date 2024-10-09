@@ -20,6 +20,7 @@
 		4401614C2CB6C53F004EC740 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4401614B2CB6C53F004EC740 /* APIKey.swift */; };
 		4401614E2CB6C574004EC740 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4401614D2CB6C574004EC740 /* Router.swift */; };
 		440161502CB6C595004EC740 /* TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4401614F2CB6C595004EC740 /* TargetType.swift */; };
+		440161522CB6C693004EC740 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440161512CB6C693004EC740 /* NetworkError.swift */; };
 		727B1EA22CB67063002297DD /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 727B1EA12CB67063002297DD /* Kingfisher */; };
 		727B1EA52CB67070002297DD /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 727B1EA42CB67070002297DD /* Toast */; };
 		727B1EA82CB670AA002297DD /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 727B1EA72CB670AA002297DD /* Alamofire */; };
@@ -73,6 +74,7 @@
 		4401614B2CB6C53F004EC740 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		4401614D2CB6C574004EC740 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		4401614F2CB6C595004EC740 /* TargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetType.swift; sourceTree = "<group>"; };
+		440161512CB6C693004EC740 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		7297ACE12CB6A45500AE3800 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		7297ACE32CB6A7F000AE3800 /* AppStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStrings.swift; sourceTree = "<group>"; };
 		72A3AAFE2CB63B93005FBCDD /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				4401614B2CB6C53F004EC740 /* APIKey.swift */,
 				4401614D2CB6C574004EC740 /* Router.swift */,
 				4401614F2CB6C595004EC740 /* TargetType.swift */,
+				440161512CB6C693004EC740 /* NetworkError.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 				72A3AB292CB6698B005FBCDD /* AppIcon.swift in Sources */,
 				3582A50C2CB6AF980031DDB3 /* HomeViewController.swift in Sources */,
 				7297ACE22CB6A45500AE3800 /* TabBarController.swift in Sources */,
+				440161522CB6C693004EC740 /* NetworkError.swift in Sources */,
 				7297ACE42CB6A7F000AE3800 /* AppStrings.swift in Sources */,
 				72A3AB072CB63CA6005FBCDD /* BaseViewController.swift in Sources */,
 				3582A5072CB681FA0031DDB3 /* LikedMedia.swift in Sources */,
