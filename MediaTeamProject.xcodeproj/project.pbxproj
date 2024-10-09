@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		3582A4EB2CB637DA0031DDB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582A4EA2CB637DA0031DDB3 /* AppDelegate.swift */; };
 		3582A4ED2CB637DA0031DDB3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582A4EC2CB637DA0031DDB3 /* SceneDelegate.swift */; };
-		3582A4EF2CB637DA0031DDB3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582A4EE2CB637DA0031DDB3 /* ViewController.swift */; };
 		3582A4F42CB637DB0031DDB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3582A4F32CB637DB0031DDB3 /* Assets.xcassets */; };
 		3582A4F72CB637DB0031DDB3 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 3582A4F62CB637DB0031DDB3 /* Base */; };
 		72A3AAFF2CB63B93005FBCDD /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 72A3AAFE2CB63B93005FBCDD /* .gitignore */; };
@@ -20,13 +19,18 @@
 		72A3AB0E2CB63D0F005FBCDD /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A3AB0D2CB63D0F005FBCDD /* BaseViewModel.swift */; };
 		72A3AB102CB63D34005FBCDD /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A3AB0F2CB63D34005FBCDD /* BaseCollectionViewCell.swift */; };
 		72A3AB122CB63D4A005FBCDD /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A3AB112CB63D4A005FBCDD /* BaseTableViewCell.swift */; };
+		72A3AB182CB64056005FBCDD /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A3AB172CB64056005FBCDD /* SearchView.swift */; };
+		72A3AB1A2CB64094005FBCDD /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A3AB192CB64094005FBCDD /* SearchViewModel.swift */; };
+		72A3AB1C2CB6409E005FBCDD /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A3AB1B2CB6409E005FBCDD /* SearchViewController.swift */; };
+		72A3AB1F2CB6418C005FBCDD /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 72A3AB1E2CB6418C005FBCDD /* SnapKit */; };
+		72A3AB222CB6562D005FBCDD /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A3AB212CB6562D005FBCDD /* AppColor.swift */; };
+		72A3AB242CB656AA005FBCDD /* AppIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A3AB232CB656AA005FBCDD /* AppIcon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3582A4E72CB637DA0031DDB3 /* MediaTeamProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MediaTeamProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3582A4EA2CB637DA0031DDB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3582A4EC2CB637DA0031DDB3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3582A4EE2CB637DA0031DDB3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3582A4F32CB637DB0031DDB3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3582A4F62CB637DB0031DDB3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3582A4F82CB637DB0031DDB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -36,6 +40,11 @@
 		72A3AB0D2CB63D0F005FBCDD /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		72A3AB0F2CB63D34005FBCDD /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		72A3AB112CB63D4A005FBCDD /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		72A3AB172CB64056005FBCDD /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		72A3AB192CB64094005FBCDD /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		72A3AB1B2CB6409E005FBCDD /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		72A3AB212CB6562D005FBCDD /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppColor.swift; path = ../../../../../../../../Documents/AppColor.swift; sourceTree = "<group>"; };
+		72A3AB232CB656AA005FBCDD /* AppIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppIcon.swift; path = ../../../../../../../../Documents/AppIcon.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72A3AB1F2CB6418C005FBCDD /* SnapKit in Frameworks */,
 				72A3AB0C2CB63D02005FBCDD /* RxSwift in Frameworks */,
 				72A3AB0A2CB63D02005FBCDD /* RxCocoa in Frameworks */,
 			);
@@ -71,15 +81,14 @@
 		3582A4E92CB637DA0031DDB3 /* MediaTeamProject */ = {
 			isa = PBXGroup;
 			children = (
-				72A3AB002CB63BEB005FBCDD /* Source */,
-				72A3AB012CB63BF2005FBCDD /* Resource */,
-				3582A4EE2CB637DA0031DDB3 /* ViewController.swift */,
+				72A3AB002CB63BEB005FBCDD /* Resource */,
+				72A3AB012CB63BF2005FBCDD /* Source */,
 				3582A4F82CB637DB0031DDB3 /* Info.plist */,
 			);
 			path = MediaTeamProject;
 			sourceTree = "<group>";
 		};
-		72A3AB002CB63BEB005FBCDD /* Source */ = {
+		72A3AB002CB63BEB005FBCDD /* Resource */ = {
 			isa = PBXGroup;
 			children = (
 				3582A4EA2CB637DA0031DDB3 /* AppDelegate.swift */,
@@ -87,15 +96,17 @@
 				3582A4F32CB637DB0031DDB3 /* Assets.xcassets */,
 				72A3AB022CB63C2D005FBCDD /* StoryBoard */,
 			);
-			path = Source;
+			path = Resource;
 			sourceTree = "<group>";
 		};
-		72A3AB012CB63BF2005FBCDD /* Resource */ = {
+		72A3AB012CB63BF2005FBCDD /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				72A3AB202CB655E3005FBCDD /* Utilities */,
 				72A3AB032CB63C83005FBCDD /* Base */,
+				72A3AB132CB63FAC005FBCDD /* Scenes */,
 			);
-			path = Resource;
+			path = Source;
 			sourceTree = "<group>";
 		};
 		72A3AB022CB63C2D005FBCDD /* StoryBoard */ = {
@@ -118,6 +129,49 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		72A3AB132CB63FAC005FBCDD /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				72A3AB142CB6401A005FBCDD /* SearchScene */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		72A3AB142CB6401A005FBCDD /* SearchScene */ = {
+			isa = PBXGroup;
+			children = (
+				72A3AB152CB6403F005FBCDD /* View */,
+				72A3AB162CB64044005FBCDD /* ViewModel */,
+			);
+			path = SearchScene;
+			sourceTree = "<group>";
+		};
+		72A3AB152CB6403F005FBCDD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				72A3AB1B2CB6409E005FBCDD /* SearchViewController.swift */,
+				72A3AB172CB64056005FBCDD /* SearchView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		72A3AB162CB64044005FBCDD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				72A3AB192CB64094005FBCDD /* SearchViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		72A3AB202CB655E3005FBCDD /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				72A3AB212CB6562D005FBCDD /* AppColor.swift */,
+				72A3AB232CB656AA005FBCDD /* AppIcon.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -137,6 +191,7 @@
 			packageProductDependencies = (
 				72A3AB092CB63D02005FBCDD /* RxCocoa */,
 				72A3AB0B2CB63D02005FBCDD /* RxSwift */,
+				72A3AB1E2CB6418C005FBCDD /* SnapKit */,
 			);
 			productName = MediaTeamProject;
 			productReference = 3582A4E72CB637DA0031DDB3 /* MediaTeamProject.app */;
@@ -168,6 +223,7 @@
 			mainGroup = 3582A4DE2CB637DA0031DDB3;
 			packageReferences = (
 				72A3AB082CB63D02005FBCDD /* XCRemoteSwiftPackageReference "RxSwift" */,
+				72A3AB1D2CB6418C005FBCDD /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 3582A4E82CB637DA0031DDB3 /* Products */;
 			projectDirPath = "";
@@ -196,12 +252,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72A3AB1C2CB6409E005FBCDD /* SearchViewController.swift in Sources */,
+				72A3AB222CB6562D005FBCDD /* AppColor.swift in Sources */,
+				72A3AB242CB656AA005FBCDD /* AppIcon.swift in Sources */,
 				72A3AB122CB63D4A005FBCDD /* BaseTableViewCell.swift in Sources */,
 				72A3AB072CB63CA6005FBCDD /* BaseViewController.swift in Sources */,
 				72A3AB102CB63D34005FBCDD /* BaseCollectionViewCell.swift in Sources */,
-				3582A4EF2CB637DA0031DDB3 /* ViewController.swift in Sources */,
 				3582A4EB2CB637DA0031DDB3 /* AppDelegate.swift in Sources */,
+				72A3AB182CB64056005FBCDD /* SearchView.swift in Sources */,
 				3582A4ED2CB637DA0031DDB3 /* SceneDelegate.swift in Sources */,
+				72A3AB1A2CB64094005FBCDD /* SearchViewModel.swift in Sources */,
 				72A3AB052CB63C95005FBCDD /* BaseView.swift in Sources */,
 				72A3AB0E2CB63D0F005FBCDD /* BaseViewModel.swift in Sources */,
 			);
@@ -438,6 +498,14 @@
 				minimumVersion = 6.8.0;
 			};
 		};
+		72A3AB1D2CB6418C005FBCDD /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -450,6 +518,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 72A3AB082CB63D02005FBCDD /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
+		};
+		72A3AB1E2CB6418C005FBCDD /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 72A3AB1D2CB6418C005FBCDD /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
