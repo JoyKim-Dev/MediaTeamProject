@@ -37,7 +37,7 @@ class BaseViewController<RootView: UIView>: UIViewController {
     }
     
     func configureView() {
-        view.backgroundColor = .white
+        view.backgroundColor = .myAppBlack
     }
     
     func configureConstraints() {
