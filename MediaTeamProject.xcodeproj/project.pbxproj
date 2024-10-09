@@ -18,6 +18,8 @@
 		727B1EA82CB670AA002297DD /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 727B1EA72CB670AA002297DD /* Alamofire */; };
 		727B1EAB2CB67112002297DD /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 727B1EAA2CB67112002297DD /* RealmSwift */; };
 		727B1EAC2CB67122002297DD /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 727B1EAA2CB67112002297DD /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		7297ACE22CB6A45500AE3800 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7297ACE12CB6A45500AE3800 /* TabBarController.swift */; };
+		7297ACE42CB6A7F000AE3800 /* AppStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7297ACE32CB6A7F000AE3800 /* AppStrings.swift */; };
 		72A3AAFF2CB63B93005FBCDD /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 72A3AAFE2CB63B93005FBCDD /* .gitignore */; };
 		72A3AB052CB63C95005FBCDD /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A3AB042CB63C95005FBCDD /* BaseView.swift */; };
 		72A3AB072CB63CA6005FBCDD /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A3AB062CB63CA6005FBCDD /* BaseViewController.swift */; };
@@ -57,6 +59,8 @@
 		3582A4F82CB637DB0031DDB3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3582A5012CB670F30031DDB3 /* RealmRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmRepository.swift; sourceTree = "<group>"; };
 		3582A5062CB681FA0031DDB3 /* LikedMedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedMedia.swift; sourceTree = "<group>"; };
+		7297ACE12CB6A45500AE3800 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		7297ACE32CB6A7F000AE3800 /* AppStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStrings.swift; sourceTree = "<group>"; };
 		72A3AAFE2CB63B93005FBCDD /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		72A3AB042CB63C95005FBCDD /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		72A3AB062CB63CA6005FBCDD /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +128,14 @@
 			path = Database;
 			sourceTree = "<group>";
 		};
+		7297ACE02CB6A41E00AE3800 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				7297ACE12CB6A45500AE3800 /* TabBarController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
 		72A3AB002CB63BEB005FBCDD /* Resource */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +150,7 @@
 		72A3AB012CB63BF2005FBCDD /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				7297ACE02CB6A41E00AE3800 /* TabBar */,
 				3582A4FE2CB670D40031DDB3 /* Database */,
 				72A3AB252CB66938005FBCDD /* Utilities */,
 				72A3AB032CB63C83005FBCDD /* Base */,
@@ -205,6 +218,7 @@
 			children = (
 				72A3AB262CB66949005FBCDD /* AppColors.swift */,
 				72A3AB282CB6698B005FBCDD /* AppIcon.swift */,
+				7297ACE32CB6A7F000AE3800 /* AppStrings.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -301,6 +315,8 @@
 				72A3AB1C2CB6409E005FBCDD /* SearchViewController.swift in Sources */,
 				72A3AB122CB63D4A005FBCDD /* BaseTableViewCell.swift in Sources */,
 				72A3AB292CB6698B005FBCDD /* AppIcon.swift in Sources */,
+				7297ACE22CB6A45500AE3800 /* TabBarController.swift in Sources */,
+				7297ACE42CB6A7F000AE3800 /* AppStrings.swift in Sources */,
 				72A3AB072CB63CA6005FBCDD /* BaseViewController.swift in Sources */,
 				3582A5072CB681FA0031DDB3 /* LikedMedia.swift in Sources */,
 				72A3AB102CB63D34005FBCDD /* BaseCollectionViewCell.swift in Sources */,
