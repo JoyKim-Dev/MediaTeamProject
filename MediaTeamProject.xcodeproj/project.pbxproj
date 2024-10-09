@@ -21,6 +21,7 @@
 		4401614E2CB6C574004EC740 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4401614D2CB6C574004EC740 /* Router.swift */; };
 		440161502CB6C595004EC740 /* TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4401614F2CB6C595004EC740 /* TargetType.swift */; };
 		440161522CB6C693004EC740 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440161512CB6C693004EC740 /* NetworkError.swift */; };
+		440161542CB6C6E4004EC740 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 440161532CB6C6E4004EC740 /* NetworkManager.swift */; };
 		727B1EA22CB67063002297DD /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 727B1EA12CB67063002297DD /* Kingfisher */; };
 		727B1EA52CB67070002297DD /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 727B1EA42CB67070002297DD /* Toast */; };
 		727B1EA82CB670AA002297DD /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 727B1EA72CB670AA002297DD /* Alamofire */; };
@@ -75,6 +76,7 @@
 		4401614D2CB6C574004EC740 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		4401614F2CB6C595004EC740 /* TargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetType.swift; sourceTree = "<group>"; };
 		440161512CB6C693004EC740 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		440161532CB6C6E4004EC740 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		7297ACE12CB6A45500AE3800 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		7297ACE32CB6A7F000AE3800 /* AppStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStrings.swift; sourceTree = "<group>"; };
 		72A3AAFE2CB63B93005FBCDD /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				4401614D2CB6C574004EC740 /* Router.swift */,
 				4401614F2CB6C595004EC740 /* TargetType.swift */,
 				440161512CB6C693004EC740 /* NetworkError.swift */,
+				440161532CB6C6E4004EC740 /* NetworkManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 				72A3AB272CB66949005FBCDD /* AppColors.swift in Sources */,
 				72A3AB052CB63C95005FBCDD /* BaseView.swift in Sources */,
 				3582A5122CB6BC5A0031DDB3 /* MediaPosterCell.swift in Sources */,
+				440161542CB6C6E4004EC740 /* NetworkManager.swift in Sources */,
 				3582A5022CB670F30031DDB3 /* RealmRepository.swift in Sources */,
 				72A3AB0E2CB63D0F005FBCDD /* BaseViewModel.swift in Sources */,
 			);
