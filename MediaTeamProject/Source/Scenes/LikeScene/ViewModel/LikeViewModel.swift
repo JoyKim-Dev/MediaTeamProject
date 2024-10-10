@@ -10,23 +10,36 @@ import RxSwift
 
 final class LikeViewModel: BaseViewModel {
     
+    private var mediaList: [Media] = []
+    
     let disposeBag = DisposeBag()
     
     struct Input {
         let fetchData: PublishSubject<Void>
+        let swipeDeleteButtonTapped: PublishSubject<Int>
     }
     
     struct Output {
-        let mediaList: PublishSubject<[Media]>
+        let mediaList: PublishSubject<[MySection]>
+        let succeedDelete: PublishSubject<Int>
     }
     
     func transform(input: Input) -> Output {
         
-        let mediaList = PublishSubject<[Media]>()
+        let mediaList = PublishSubject<[MySection]>()
+        let succeedDelete = PublishSubject<Int>()
         
         input.fetchData
             .bind(with: self) { owner, _ in
-                mediaList.onNext(LikeViewModel.mockData)
+                owner.mediaList = LikeViewModel.mockData
+                mediaList.onNext([MySection(header: "First section", items: owner.mediaList)])
+            }
+            .disposed(by: disposeBag)
+        
+        input.swipeDeleteButtonTapped
+            .bind(with: self) { owner, row in
+                owner.mediaList.remove(at: row)
+                mediaList.onNext([MySection(header: "First section", items: owner.mediaList)])
             }
             .disposed(by: disposeBag)
         
@@ -38,10 +51,9 @@ final class LikeViewModel: BaseViewModel {
         
         
         
-        
-        
         return Output(
-            mediaList: mediaList
+            mediaList: mediaList,
+            succeedDelete: succeedDelete
         )
     }
 }

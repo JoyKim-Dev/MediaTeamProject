@@ -13,7 +13,7 @@ final class LikeView: BaseView {
     private let headerTitle: UILabel = {
         let label = UILabel()
         label.text = "영화 시리즈"
-        label.font = .boldSystemFont(ofSize: 16)
+        label.font = .boldSystemFont(ofSize: 17)
         return label
     }()
     
