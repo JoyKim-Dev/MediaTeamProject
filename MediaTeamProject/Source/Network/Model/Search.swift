@@ -9,13 +9,6 @@ import Foundation
 
 struct SearchResponse: Decodable {
     let page: Int
-    let results: [Search]
+    let results: [Media]
     let total_pages: Int
-}
-
-struct Search: Decodable {
-    let id: Int
-    let poster_path: String?
-    
-    var mediaType = "movie"
 }

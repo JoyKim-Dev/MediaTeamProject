@@ -16,7 +16,7 @@ struct Media: Decodable {
     let backdrop_path: String? //배경 포스터 이미지 주소
     let genre_ids: [Int]
     let vote_average: Double //평점
-    let media_type: String //"tv" 혹은 "movie"
+    let media_type: String? //"tv" 혹은 "movie"
     
     var mediaTitle: String { //영화 제목 또는 드라마 제목을 얻으려면 이 프로퍼티를 이용해 주세요!
         return name == nil ? title ?? "" : name ?? ""
