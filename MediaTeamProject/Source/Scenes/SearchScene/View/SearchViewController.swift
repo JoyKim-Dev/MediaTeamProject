@@ -34,8 +34,8 @@ final class SearchViewController: BaseViewController<SearchView> {
         
         output.trendList
             .bind(to: rootView.recommendTableView.rx.items(
-                cellIdentifier: TrendTableViewCell.identifier,
-                cellType: TrendTableViewCell.self)) { row, item, cell in
+                cellIdentifier: MediaBackdropTableViewCell.identifier,
+                cellType: MediaBackdropTableViewCell.self)) { row, item, cell in
                     cell.searchConfigure(item)
                     
                 }

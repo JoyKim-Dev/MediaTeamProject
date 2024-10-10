@@ -43,7 +43,7 @@ final class SearchView: BaseView {
     
     let recommendTableView: UITableView = {
         let view = UITableView()
-        view.register(TrendTableViewCell.self, forCellReuseIdentifier: TrendTableViewCell.identifier)
+        view.register(MediaBackdropTableViewCell.self, forCellReuseIdentifier: MediaBackdropTableViewCell.identifier)
         view.rowHeight = 150
         view.separatorStyle = .none
         return view

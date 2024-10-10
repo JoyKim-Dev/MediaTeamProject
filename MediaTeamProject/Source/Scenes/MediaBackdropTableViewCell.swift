@@ -69,7 +69,7 @@ final class MediaBackdropTableViewCell: BaseTableViewCell {
 }
 
 //MARK: Search
-extension TrendTableViewCell {
+extension MediaBackdropTableViewCell {
     
     func searchConfigure(_ movieData: Media) {
         if let url = movieData.poster_path {
