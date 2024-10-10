@@ -16,7 +16,9 @@ final class MediaBackdropTableViewCell: BaseTableViewCell {
     
     private let posterImage: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleToFill
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.layer.cornerRadius = 5
         return imageView
     }()
     
