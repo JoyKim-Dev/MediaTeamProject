@@ -1,5 +1,5 @@
 //
-//  TrendTableViewCell.swift
+//  MediaBackdropTableViewCell.swift
 //  MediaTeamProject
 //
 //  Created by 전준영 on 10/10/24.
