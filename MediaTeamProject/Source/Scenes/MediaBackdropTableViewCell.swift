@@ -48,8 +48,10 @@ final class MediaBackdropTableViewCell: BaseTableViewCell {
     
     override func configureLayout() {
         posterImage.snp.makeConstraints { make in
-            make.leading.verticalEdges.equalTo(safeAreaLayoutGuide).inset(5)
+            make.leading.equalToSuperview().inset(5)
             make.width.equalTo(150)
+            make.height.equalTo(125)
+            make.centerY.equalToSuperview()
         }
         
         title.snp.makeConstraints { make in
