@@ -18,6 +18,9 @@ final class HomeViewController: BaseViewController<HomeView> {
     
     private var movieTrendList = BehaviorRelay<[Media]>(value: [])
     private var tvTrendList = BehaviorRelay<[Media]>(value: [])
+    private let mainPosterMedia = PublishSubject<Media>()
+    private let tvGenreList = BehaviorRelay<[Genre]>(value: [])
+    private let movieGenreList = BehaviorRelay<[Genre]>(value: [])
     
     private let viewWillAppearTrigger = PublishSubject<Void>()
     
@@ -38,20 +41,13 @@ extension HomeViewController {
         
         let rightBarItemOne = UIBarButtonItem(image: AppIcon.sparklesTV, style: .plain, target: nil, action: nil)
         let rightBarItemTwo = UIBarButtonItem(image: AppIcon.magnifyingGlass, style: .plain, target: nil, action: nil)
-//        let leftLabel = UILabel()
-//        leftLabel.text = "N"
-//        leftLabel.contentMode = .scaleAspectFill
-//        leftLabel.font = UIFont.systemFont(ofSize: 16, weight: .black)
-//        leftLabel.textColor = .myAppRed
-//        
-//        let leftBarItem = UIBarButtonItem(customView: leftLabel)
         let leftBarItem = UIBarButtonItem(image: AppIcon.netflixLogo, style: .plain, target: nil, action: nil)
         navigationItem.rightBarButtonItems = [rightBarItemTwo, rightBarItemOne]
         navigationItem.leftBarButtonItem = leftBarItem
     }
     
     private func bindViewModel() {
-        let input = HomeViewModel.Input(viewWillAppear: viewWillAppearTrigger)
+        let input = HomeViewModel.Input(viewWillAppear: viewWillAppearTrigger, mainPosterMedia: mainPosterMedia)
         let output = viewModel.transform(input: input)
         
         output.movieTrendList
@@ -80,6 +76,33 @@ extension HomeViewController {
             })
             .disposed(by: disposeBag)
         
+        
+        output.movieGenreList
+            .subscribe(onNext: { [weak self] result in
+                switch result {
+                case .success(let genre):
+                    let list = genre.genres
+                    self?.movieGenreList.accept(list)
+//                    self?.updatePosterImage()
+                case .failure(let error):
+                    print("movie장르 바인딩 실패: \(error)")
+                }
+            })
+            .disposed(by: disposeBag)
+        
+        output.tvGenreList
+            .subscribe(onNext: { [weak self] result in
+                switch result {
+                case .success(let genre):
+                    let list = genre.genres
+                    self?.tvGenreList.accept(list)
+//                    self?.updatePosterImage()
+                case .failure(let error):
+                    print("movie장르 바인딩 실패: \(error)")
+                }
+            })
+            .disposed(by: disposeBag)
+        
         movieTrendList
             .map { Array($0.prefix(10)) }
             .bind(to: rootView.movieCollectionView.rx.items(cellIdentifier: MediaPosterCell.identifier, cellType: MediaPosterCell.self)) {
@@ -97,6 +120,7 @@ extension HomeViewController {
                 cell.layer.cornerRadius = 10
             }
             .disposed(by: disposeBag)
+        
     }
     
     private func updatePosterImage() {
@@ -107,12 +131,30 @@ extension HomeViewController {
             self.rootView.posterImageView.image = UIImage(systemName: "star")
             return
         }
-        
-        let URL = URL(string: "https://image.tmdb.org/t/p/w780\(posterPath)")
+        mainPosterMedia.onNext(randomMedia)
+        let URL =
+        APIURL.makeTMDBImageURL(path: posterPath)
         self.rootView.posterImageView.kf.setImage(with: URL)
         self.rootView.posterImageView.contentMode = .scaleAspectFill
         
     }
+    
+    private func updatePosterGenre() {
+        let combinedList = movieGenreList.value + tvGenreList.value
+        let selectedPosterGenre = mainPosterMedia.map({ $0.genre_ids })
+        
+        let genreDictionary = Dictionary(uniqueKeysWithValues: combinedList.map { ($0.id, $0.name) })
+        let name = selectedPosterGenre.map { genreIds in
+            genreIds.compactMap { genreDictionary[$0] }
+        }
+        
+        
+    }
+    
+    func updateGenreLabel(with combinedList: [Genre], selectedPosterGenre: [Int]) {
+           let genreDictionary = Dictionary(uniqueKeysWithValues: combinedList.map { ($0.id, $0.name) })
+           let genreNames = selectedPosterGenre.compactMap { genreDictionary[$0] }
+           let genreText = genreNames.joined(separator: " / ")
+            self.rootView.genreLabel.text = genreText
+       }
 }
-
-

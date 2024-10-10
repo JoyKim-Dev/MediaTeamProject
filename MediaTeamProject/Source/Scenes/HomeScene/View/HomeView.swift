@@ -20,9 +20,9 @@ final class HomeView: BaseView {
         return imageView
     }()
     
-    private let genreLabel = {
+    lazy var genreLabel = {
         let label = UILabel()
-        label.text = "test"
+     //   label.text = "test"
         return label
     }()
     
