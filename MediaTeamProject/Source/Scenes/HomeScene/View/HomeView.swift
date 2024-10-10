@@ -20,6 +20,12 @@ final class HomeView: BaseView {
         return imageView
     }()
     
+    private let genreLabel = {
+        let label = UILabel()
+        label.text = "test"
+        return label
+    }()
+    
     private let playButton = {
         let button = UIButton.Configuration.roundCornerButton(title: AppStrings.ButtonTitle.play, backgroundColor: .myAppWhite, foregroundColor: .myAppBlack, appIcon: AppIcon.play!)
         return button
@@ -69,6 +75,7 @@ final class HomeView: BaseView {
         addSubview(scrollView)
         scrollView.addSubview(contentView)
         contentView.addSubview(posterImageView)
+        contentView.addSubview(genreLabel)
         contentView.addSubview(buttonStack)
         buttonStack.addArrangedSubview(playButton)
         buttonStack.addArrangedSubview(likeButton)
@@ -94,6 +101,10 @@ final class HomeView: BaseView {
             make.height.equalTo(700)
         }
         
+        genreLabel.snp.makeConstraints { make in
+            make.centerX.equalTo(posterImageView)
+            make.bottom.equalTo(buttonStack.snp.top).offset(-15)
+        }
         buttonStack.snp.makeConstraints { make in
             make.horizontalEdges.equalTo(posterImageView).inset(10)
             make.height.equalTo(30)

@@ -38,13 +38,14 @@ extension HomeViewController {
         
         let rightBarItemOne = UIBarButtonItem(image: AppIcon.sparklesTV, style: .plain, target: nil, action: nil)
         let rightBarItemTwo = UIBarButtonItem(image: AppIcon.magnifyingGlass, style: .plain, target: nil, action: nil)
-        let leftLabel = UILabel()
-        leftLabel.text = "N"
-        leftLabel.contentMode = .scaleAspectFill
-        leftLabel.font = UIFont.systemFont(ofSize: 16, weight: .black)
-        leftLabel.textColor = .myAppRed
-        
-        let leftBarItem = UIBarButtonItem(customView: leftLabel)
+//        let leftLabel = UILabel()
+//        leftLabel.text = "N"
+//        leftLabel.contentMode = .scaleAspectFill
+//        leftLabel.font = UIFont.systemFont(ofSize: 16, weight: .black)
+//        leftLabel.textColor = .myAppRed
+//        
+//        let leftBarItem = UIBarButtonItem(customView: leftLabel)
+        let leftBarItem = UIBarButtonItem(image: AppIcon.netflixLogo, style: .plain, target: nil, action: nil)
         navigationItem.rightBarButtonItems = [rightBarItemTwo, rightBarItemOne]
         navigationItem.leftBarButtonItem = leftBarItem
     }

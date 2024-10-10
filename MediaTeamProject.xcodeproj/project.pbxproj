@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		354670E92CB7B758002C16FE /* AppAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354670E82CB7B758002C16FE /* AppAppearance.swift */; };
 		3582A4EB2CB637DA0031DDB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582A4EA2CB637DA0031DDB3 /* AppDelegate.swift */; };
 		3582A4ED2CB637DA0031DDB3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582A4EC2CB637DA0031DDB3 /* SceneDelegate.swift */; };
 		3582A4F42CB637DB0031DDB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3582A4F32CB637DB0031DDB3 /* Assets.xcassets */; };
@@ -69,6 +70,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		354670E82CB7B758002C16FE /* AppAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAppearance.swift; sourceTree = "<group>"; };
 		3582A4E72CB637DA0031DDB3 /* MediaTeamProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MediaTeamProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3582A4EA2CB637DA0031DDB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3582A4EC2CB637DA0031DDB3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 			children = (
 				3582A4EA2CB637DA0031DDB3 /* AppDelegate.swift */,
 				3582A4EC2CB637DA0031DDB3 /* SceneDelegate.swift */,
+				354670E82CB7B758002C16FE /* AppAppearance.swift */,
 				3582A4F32CB637DB0031DDB3 /* Assets.xcassets */,
 				72A3AB022CB63C2D005FBCDD /* StoryBoard */,
 			);
@@ -441,6 +444,7 @@
 				72A3AB072CB63CA6005FBCDD /* BaseViewController.swift in Sources */,
 				3582A5072CB681FA0031DDB3 /* LikedMedia.swift in Sources */,
 				72A3AB102CB63D34005FBCDD /* BaseCollectionViewCell.swift in Sources */,
+				354670E92CB7B758002C16FE /* AppAppearance.swift in Sources */,
 				3582A50E2CB6AFB30031DDB3 /* HomeView.swift in Sources */,
 				3582A4EB2CB637DA0031DDB3 /* AppDelegate.swift in Sources */,
 				72A3AB182CB64056005FBCDD /* SearchView.swift in Sources */,

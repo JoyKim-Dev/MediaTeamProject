@@ -17,5 +17,5 @@ enum AppIcon {
     static let download: UIImage? = UIImage(systemName: "square.and.arrow.down")
     static let faceSmiling: UIImage? = UIImage(systemName: "face.smiling")
     static let plus: UIImage? = UIImage(systemName: "plus")
-    
+    static let netflixLogo: UIImage? = .netflix
 }

@@ -42,7 +42,8 @@ extension MediaPosterCell {
         moviePosterImageView.layer.cornerRadius = 5
         
         if let url = data.poster_path {
-            let URL = URL(string: "https://image.tmdb.org/t/p/w780\(url)")
+            let URL =
+            APIURL.makeTMDBImageURL(path: url)
             moviePosterImageView.kf.setImage(with: URL)
             moviePosterImageView.contentMode = .scaleAspectFit
         } else {
