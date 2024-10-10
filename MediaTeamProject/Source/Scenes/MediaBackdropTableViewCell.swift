@@ -10,7 +10,7 @@ import SnapKit
 import Kingfisher
 import RxSwift
 
-final class TrendTableViewCell: BaseTableViewCell {
+final class MediaBackdropTableViewCell: BaseTableViewCell {
     
     var disposeBag = DisposeBag()
     
