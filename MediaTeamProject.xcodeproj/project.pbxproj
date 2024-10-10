@@ -35,6 +35,8 @@
 		4401616E2CB6D7BE004EC740 /* LikeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4401616D2CB6D7BE004EC740 /* LikeView.swift */; };
 		440161702CB6D845004EC740 /* LikeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4401616F2CB6D845004EC740 /* LikeViewModel.swift */; };
 		445945962CB801BF008D32A4 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445945952CB801BF008D32A4 /* APIKey.swift */; };
+		445945992CB81DD3008D32A4 /* Differentiator in Frameworks */ = {isa = PBXBuildFile; productRef = 445945982CB81DD3008D32A4 /* Differentiator */; };
+		4459459B2CB81DD3008D32A4 /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = 4459459A2CB81DD3008D32A4 /* RxDataSources */; };
 		727B1EA22CB67063002297DD /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 727B1EA12CB67063002297DD /* Kingfisher */; };
 		727B1EA52CB67070002297DD /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 727B1EA42CB67070002297DD /* Toast */; };
 		727B1EA82CB670AA002297DD /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 727B1EA72CB670AA002297DD /* Alamofire */; };
@@ -130,7 +132,9 @@
 				72A3AB1F2CB6418C005FBCDD /* SnapKit in Frameworks */,
 				727B1EAB2CB67112002297DD /* RealmSwift in Frameworks */,
 				72A3AB0C2CB63D02005FBCDD /* RxSwift in Frameworks */,
+				445945992CB81DD3008D32A4 /* Differentiator in Frameworks */,
 				727B1EA82CB670AA002297DD /* Alamofire in Frameworks */,
+				4459459B2CB81DD3008D32A4 /* RxDataSources in Frameworks */,
 				727B1EA52CB67070002297DD /* Toast in Frameworks */,
 				72A3AB0A2CB63D02005FBCDD /* RxCocoa in Frameworks */,
 			);
@@ -407,6 +411,8 @@
 				727B1EA42CB67070002297DD /* Toast */,
 				727B1EA72CB670AA002297DD /* Alamofire */,
 				727B1EAA2CB67112002297DD /* RealmSwift */,
+				445945982CB81DD3008D32A4 /* Differentiator */,
+				4459459A2CB81DD3008D32A4 /* RxDataSources */,
 			);
 			productName = MediaTeamProject;
 			productReference = 3582A4E72CB637DA0031DDB3 /* MediaTeamProject.app */;
@@ -443,6 +449,7 @@
 				727B1EA32CB67070002297DD /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 				727B1EA62CB670AA002297DD /* XCRemoteSwiftPackageReference "Alamofire" */,
 				727B1EA92CB67112002297DD /* XCRemoteSwiftPackageReference "realm-swift" */,
+				445945972CB81DD3008D32A4 /* XCRemoteSwiftPackageReference "RxDataSources" */,
 			);
 			productRefGroup = 3582A4E82CB637DA0031DDB3 /* Products */;
 			projectDirPath = "";
@@ -736,6 +743,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		445945972CB81DD3008D32A4 /* XCRemoteSwiftPackageReference "RxDataSources" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxDataSources.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.2;
+			};
+		};
 		727B1EA02CB67063002297DD /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
@@ -787,6 +802,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		445945982CB81DD3008D32A4 /* Differentiator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 445945972CB81DD3008D32A4 /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = Differentiator;
+		};
+		4459459A2CB81DD3008D32A4 /* RxDataSources */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 445945972CB81DD3008D32A4 /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = RxDataSources;
+		};
 		727B1EA12CB67063002297DD /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 727B1EA02CB67063002297DD /* XCRemoteSwiftPackageReference "Kingfisher" */;
