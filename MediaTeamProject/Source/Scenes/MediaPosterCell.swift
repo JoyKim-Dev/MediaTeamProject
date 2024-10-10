@@ -10,8 +10,10 @@ import UIKit
 import Alamofire
 import SnapKit
 import Kingfisher
+import RxSwift
 
 final class MediaPosterCell: BaseCollectionViewCell {
+    var disposeBag = DisposeBag()
     
     let moviePosterImageView = UIImageView()
     
@@ -21,17 +23,31 @@ final class MediaPosterCell: BaseCollectionViewCell {
     
     override func configureLayout()  {
         moviePosterImageView.snp.makeConstraints { make in
-            make.edges.equalTo(contentView)
+            make.edges.equalTo(contentView.safeAreaLayoutGuide)
         }
         
+    }
+
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        disposeBag = DisposeBag()
     }
 }
 
 extension MediaPosterCell {
     
-// APIModel 업데이트 되면 반영
-     func configUI() {
-
+    func configUI(data: Media) {
+        
+        moviePosterImageView.clipsToBounds = true
+        moviePosterImageView.layer.cornerRadius = 5
+        
+        if let url = data.poster_path {
+            let URL = URL(string: "https://image.tmdb.org/t/p/w780\(url)")
+            moviePosterImageView.kf.setImage(with: URL)
+            moviePosterImageView.contentMode = .scaleAspectFit
+        } else {
+            moviePosterImageView.image = UIImage(systemName: "star")
+        }
     }
 }
 

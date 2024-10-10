@@ -15,4 +15,9 @@ enum AppStrings {
         static let download = "Download"
     }
     
+    enum ButtonTitle {
+        static let play = "재생"
+        static let addToList = "내가 찜한 리스트"
+    }
+    
 }
