@@ -31,33 +31,63 @@ final class SearchView: BaseView {
         return searchBar
     }()
     
+    private let genreView = UIView()
+    
+    private let genreLabel: UILabel = {
+        let label = UILabel()
+        label.text = "추천 시리즈 & 영화"
+        label.font = .boldSystemFont(ofSize: 18)
+        label.textColor = .myAppWhite
+        return label
+    }()
+    
     let recommendTableView: UITableView = {
         let view = UITableView()
-        view.register(SearchTableViewCell.self, forCellReuseIdentifier: "SearchTableViewCell")
-        view.rowHeight = 400
+        view.register(TrendTableViewCell.self, forCellReuseIdentifier: TrendTableViewCell.identifier)
+        view.rowHeight = 150
         view.separatorStyle = .none
         return view
     }()
     
-    private lazy var pageViewController: UIPageViewController = {
+    let pageViewController: UIPageViewController = {
         let pageVC = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
         return pageVC
     }()
     
     override func configureHierarchy() {
+        addSubview(genreView)
+        genreView.addSubview(genreLabel)
+        addSubview(recommendTableView)
         addSubview(pageViewController.view)
-        
         searchBar.delegate = self
     }
     
     override func configureLayout() {
-        pageViewController.view.snp.makeConstraints { make in
-            make.top.equalTo(safeAreaLayoutGuide).inset(10)
+        genreView.snp.makeConstraints { make in
+            make.top.horizontalEdges.equalTo(safeAreaLayoutGuide)
+            make.height.equalTo(50)
+        }
+        
+        genreLabel.snp.makeConstraints { make in
+            make.centerY.equalTo(genreView)
+            make.leading.equalTo(safeAreaLayoutGuide).inset(15)
+        }
+        
+        recommendTableView.snp.makeConstraints { make in
+            make.top.equalTo(genreView.snp.bottom)
             make.horizontalEdges.bottom.equalTo(safeAreaLayoutGuide)
         }
+        
+        pageViewController.view.snp.makeConstraints { make in
+            make.top.equalTo(genreView.snp.bottom)
+            make.horizontalEdges.bottom.equalTo(safeAreaLayoutGuide)
+        }
+        
     }
     
-    
+    override func configureView() {
+        recommendTableView.backgroundColor = .myAppBlack
+    }
     
 }
 
@@ -65,9 +95,11 @@ extension SearchView: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText.isEmpty {
+            pageViewController.view.isHidden = true
             let defaultPage = comeBackVC()
             pageViewController.setViewControllers([defaultPage], direction: .reverse, animated: false, completion: nil)
         } else {
+            pageViewController.view.isHidden = false
             let resultPage = searchingVC(searchText)
             pageViewController.setViewControllers([resultPage], direction: .forward, animated: false, completion: nil)
         }
