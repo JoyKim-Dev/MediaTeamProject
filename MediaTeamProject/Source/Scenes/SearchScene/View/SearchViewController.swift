@@ -12,17 +12,22 @@ import RxCocoa
 final class SearchViewController: BaseViewController<SearchView> {
     
     private let viewModel = SearchViewModel()
+    private var isSearchEmpty = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         searchNaviConfigure()
-        
-        rootView.pageViewController.view.isHidden = true
+    }
+    
+    override func configureView() {
+        rootView.collectionView.isHidden = true
     }
     
     override func bindModel() {
-        let input = SearchViewModel.Input()
+        let input = SearchViewModel.Input(
+            searchText: rootView.searchBar.rx.text.orEmpty.asObservable(),
+            loadMoreTrigger: rootView.collectionView.rx.reachedBottom(offset: 100).asObservable())
         let output = viewModel.transform(input: input)
         
         output.trendList
@@ -31,19 +36,26 @@ final class SearchViewController: BaseViewController<SearchView> {
             }
             .disposed(by: viewModel.disposeBag)
         
-        
         output.trendList
             .bind(to: rootView.recommendTableView.rx.items(
                 cellIdentifier: MediaBackdropTableViewCell.identifier,
                 cellType: MediaBackdropTableViewCell.self)) { row, item, cell in
                     cell.searchConfigure(item)
-                    
+                }
+                .disposed(by: viewModel.disposeBag)
+        
+        output.searchResult
+            .bind(to: rootView.collectionView.rx.items(
+                cellIdentifier: MediaPosterCell.identifier,
+                cellType: MediaPosterCell.self)) { row, item, cell in
+                    cell.configUI(data: item)
                 }
                 .disposed(by: viewModel.disposeBag)
     }
     
 }
 
+//MARK: - ViewSet
 extension SearchViewController {
     
     private func searchNaviConfigure() {

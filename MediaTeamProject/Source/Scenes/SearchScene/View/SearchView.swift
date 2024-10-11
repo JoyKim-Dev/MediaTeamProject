@@ -49,16 +49,36 @@ final class SearchView: BaseView {
         return view
     }()
     
-    let pageViewController: UIPageViewController = {
-        let pageVC = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
-        return pageVC
+    let collectionView: UICollectionView = {
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout())
+        collectionView.register(MediaPosterCell.self, forCellWithReuseIdentifier: MediaPosterCell.identifier)
+        collectionView.backgroundColor = .myAppBlack
+        return collectionView
     }()
+    
+    static private func layout() -> UICollectionViewFlowLayout {
+        let layout = UICollectionViewFlowLayout()
+        let sectionSpacing: CGFloat = 2
+        let cellSpacing: CGFloat = 2
+        let numberOfItemsPerRow: CGFloat = 3
+        let availableWidth = UIScreen.main.bounds.width - (sectionSpacing * 2) - (cellSpacing * (numberOfItemsPerRow - 1))
+        let cellWidth = availableWidth / numberOfItemsPerRow
+        
+        layout.itemSize = CGSize(width: cellWidth, height: cellWidth * 1.6)
+        layout.scrollDirection = .vertical
+        layout.minimumLineSpacing = cellSpacing
+        layout.minimumInteritemSpacing = cellSpacing
+        layout.sectionInset = UIEdgeInsets(top: sectionSpacing, left: sectionSpacing, bottom: sectionSpacing, right: sectionSpacing)
+        
+        return layout
+    }
     
     override func configureHierarchy() {
         addSubview(genreView)
         genreView.addSubview(genreLabel)
         addSubview(recommendTableView)
-        addSubview(pageViewController.view)
+        addSubview(collectionView)
+        
         searchBar.delegate = self
     }
     
@@ -78,7 +98,7 @@ final class SearchView: BaseView {
             make.horizontalEdges.bottom.equalTo(safeAreaLayoutGuide)
         }
         
-        pageViewController.view.snp.makeConstraints { make in
+        collectionView.snp.makeConstraints { make in
             make.top.equalTo(genreView.snp.bottom)
             make.horizontalEdges.bottom.equalTo(safeAreaLayoutGuide)
         }
@@ -95,34 +115,12 @@ extension SearchView: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText.isEmpty {
-            pageViewController.view.isHidden = true
-            let defaultPage = comeBackVC()
-            pageViewController.setViewControllers([defaultPage], direction: .reverse, animated: false, completion: nil)
+            collectionView.isHidden = true
+            genreLabel.text = "추천 시리즈 & 영화"
         } else {
-            pageViewController.view.isHidden = false
-            let resultPage = searchingVC(searchText)
-            pageViewController.setViewControllers([resultPage], direction: .forward, animated: false, completion: nil)
+            collectionView.isHidden = false
+            genreLabel.text = "영화 & 시리즈"
         }
-    }
-    
-    private func comeBackVC() -> UIViewController {
-        let defaultVC = SearchViewController()
-        return defaultVC
-    }
-    
-    private func searchingVC(_ searchText: String) -> UIViewController {
-        let resultVC = SearchResultViewController()
-        resultVC.q = searchText
-        return resultVC
-    }
-}
-
-final class SearchResultViewController: UIViewController {
-    var q: String?
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .white
     }
     
 }
