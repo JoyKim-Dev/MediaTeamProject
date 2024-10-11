@@ -7,6 +7,7 @@
 
 import Foundation
 import RxSwift
+import RxRelay
 import RealmSwift
 
 final class LikeViewModel: BaseViewModel {
@@ -27,12 +28,14 @@ final class LikeViewModel: BaseViewModel {
         let mediaList: PublishSubject<[LikeSection]>
         let succeedDelete: PublishSubject<Int>
         let playImageButtonTapped: PublishSubject<Void>
+        let hideNoDataMessageLabel: PublishRelay<Bool>
     }
     
     func transform(input: Input) -> Output {
         
         let mediaList = PublishSubject<[LikeSection]>()
         let succeedDelete = PublishSubject<Int>()
+        let hideNoDataMessageLabel = PublishRelay<Bool>()
         
         
         input.viewDidLoad
@@ -51,9 +54,12 @@ final class LikeViewModel: BaseViewModel {
                         self.mediaList = Array(likeMedias)
                         mediaList.onNext([LikeSection(header: "", items: owner.mediaList)])
                         
+                        
                     case .error(let error):
                         print(error)
                     }
+                    //데이터 없을 시 메시지 레이블 표시
+                    self.mediaList.isEmpty == true ? hideNoDataMessageLabel.accept(false) : hideNoDataMessageLabel.accept(true)
                 }
             }
             .disposed(by: disposeBag)
@@ -74,7 +80,8 @@ final class LikeViewModel: BaseViewModel {
         return Output(
             mediaList: mediaList,
             succeedDelete: succeedDelete,
-            playImageButtonTapped: input.playImageButtonTapped
+            playImageButtonTapped: input.playImageButtonTapped,
+            hideNoDataMessageLabel: hideNoDataMessageLabel
         )
     }
 }

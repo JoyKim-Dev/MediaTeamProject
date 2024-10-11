@@ -92,6 +92,10 @@ final class LikeViewController: BaseViewController<LikeView> {
         )
         let output = viewModel.transform(input: input)
         
+        output.hideNoDataMessageLabel
+            .bind(to: rootView.noDataLabel.rx.isHidden)
+            .disposed(by: disposeBag)
+        
         output.mediaList
             .bind(to: rootView.tableView.rx.items(dataSource: self.dataSource))
             .disposed(by: disposeBag)

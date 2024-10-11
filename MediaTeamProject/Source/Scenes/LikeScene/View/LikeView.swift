@@ -26,9 +26,33 @@ final class LikeView: BaseView {
         return tv
     }()
     
+    let noDataLabel: UILabel = {
+        let label = UILabel()
+        
+        let attribute = NSMutableAttributedString(string: "아직 저장된 미디어 없습니다\n", attributes: [
+            .font: UIFont.boldSystemFont(ofSize: 17)
+        ])
+        attribute.append(NSAttributedString(string: "좋아하는 미디어를 추가해 보세요 🎬", attributes: [
+            .font: UIFont.systemFont(ofSize: 14, weight: .regular)
+        ]))
+        
+        let style = NSMutableParagraphStyle()
+        style.lineSpacing = 4
+        attribute.addAttribute(.paragraphStyle,
+                               value: style,
+                               range: NSRange(location: 0, length: attribute.length))
+        
+        label.attributedText = attribute
+        label.textAlignment = .center
+        label.numberOfLines = 0
+        label.isHidden = true
+        return label
+    }()
+    
     override func configureHierarchy() {
         addSubview(headerTitle)
         addSubview(tableView)
+        addSubview(noDataLabel)
     }
     
     override func configureLayout() {
@@ -41,6 +65,10 @@ final class LikeView: BaseView {
             make.top.equalTo(headerTitle.snp.bottom).offset(10)
             make.horizontalEdges.equalToSuperview()
             make.bottom.equalToSuperview()
+        }
+        
+        noDataLabel.snp.makeConstraints { make in
+            make.center.equalToSuperview()
         }
     }
 }
