@@ -32,8 +32,10 @@ final class SearchViewModel: BaseViewModel {
     }
     
     func transform(input: Input) -> Output {
+        //추천시리즈
         fetchTranding()
         
+        //1페이지 검색
         input.searchText
             .debounce(.seconds(1), scheduler: MainScheduler.instance)
             .distinctUntilChanged()
@@ -48,6 +50,7 @@ final class SearchViewModel: BaseViewModel {
             })
             .disposed(by: disposeBag)
         
+        //페이지네이션 처리
         input.loadMoreTrigger
             .withLatestFrom(input.searchText)
             .flatMapLatest { [weak self] query -> Observable<[Media]> in

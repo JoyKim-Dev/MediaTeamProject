@@ -30,12 +30,7 @@ final class SearchViewController: BaseViewController<SearchView> {
             loadMoreTrigger: rootView.collectionView.rx.reachedBottom(offset: 100).asObservable())
         let output = viewModel.transform(input: input)
         
-        output.trendList
-            .bind(with: self) { owner, trendResult in
-                print(trendResult)
-            }
-            .disposed(by: viewModel.disposeBag)
-        
+        //추천시리즈
         output.trendList
             .bind(to: rootView.recommendTableView.rx.items(
                 cellIdentifier: MediaBackdropTableViewCell.identifier,
@@ -44,6 +39,7 @@ final class SearchViewController: BaseViewController<SearchView> {
                 }
                 .disposed(by: viewModel.disposeBag)
         
+        //검색결과
         output.searchResult
             .bind(to: rootView.collectionView.rx.items(
                 cellIdentifier: MediaPosterCell.identifier,
