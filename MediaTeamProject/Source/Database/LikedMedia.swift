@@ -7,8 +7,13 @@
 
 import Foundation
 import RealmSwift
+import RxDataSources
 
-final class LikedMedia: Object, ObjectKeyIdentifiable {
+final class LikedMedia: Object, ObjectKeyIdentifiable, IdentifiableType {
+    var identity: some Hashable {
+        return self.id
+    }
+    
     @Persisted(primaryKey: true) var id: Int
     @Persisted var backdropPath: String
     @Persisted var title: String

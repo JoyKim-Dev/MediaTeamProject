@@ -48,7 +48,7 @@ final class TabBarController: UITabBarController {
                 case .topSearch:
                     return SearchViewController()
                 case .download:
-                    return SearchViewController()
+                    return LikeViewController()
                 }
             }
         }
