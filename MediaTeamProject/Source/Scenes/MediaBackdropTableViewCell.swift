@@ -16,7 +16,9 @@ final class MediaBackdropTableViewCell: BaseTableViewCell {
     
     private let posterImage: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleToFill
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.layer.cornerRadius = 5
         return imageView
     }()
     
@@ -27,10 +29,11 @@ final class MediaBackdropTableViewCell: BaseTableViewCell {
         return label
     }()
     
-    private let playImage: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = AppIcon.playCircle?.withTintColor(.myAppWhite, renderingMode: .alwaysOriginal)
-        return imageView
+     let playImage: UIButton = {
+        let btn = UIButton(type: .system)
+        btn.setTitle("", for: .normal)
+        btn.setImage(AppIcon.playCircle?.withTintColor(.myAppWhite, renderingMode: .alwaysOriginal), for: .normal)
+        return btn
     }()
     
     override func prepareForReuse() {
@@ -41,13 +44,15 @@ final class MediaBackdropTableViewCell: BaseTableViewCell {
     override func configureHierarchy() {
         addSubview(posterImage)
         addSubview(title)
-        addSubview(playImage)
+        contentView.addSubview(playImage)
     }
     
     override func configureLayout() {
         posterImage.snp.makeConstraints { make in
-            make.leading.verticalEdges.equalTo(safeAreaLayoutGuide).inset(5)
+            make.leading.equalToSuperview().inset(5)
             make.width.equalTo(150)
+            make.height.equalTo(125)
+            make.centerY.equalToSuperview()
         }
         
         title.snp.makeConstraints { make in
@@ -81,7 +86,18 @@ extension MediaBackdropTableViewCell {
         }
         
         title.text = movieData.mediaTitle
+    }
+    
+    func likeConfigure(_ data: LikedMedia) {
         
+        if !data.backdropPath.isEmpty {
+            let URL = URL(string: "https://image.tmdb.org/t/p/w780\(data.backdropPath)")
+            posterImage.kf.setImage(with: URL)
+        } else {
+            posterImage.image = UIImage(systemName: "star")
+        }
+        
+        title.text = data.title
     }
     
 }
