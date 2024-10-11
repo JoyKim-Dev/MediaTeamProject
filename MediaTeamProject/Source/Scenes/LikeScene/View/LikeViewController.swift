@@ -10,19 +10,19 @@ import RxSwift
 import RxDataSources
 
 
-struct MySection {
+struct LikeSection {
     var header: String
     var items: [Item]
 }
 
-extension MySection : AnimatableSectionModelType {
-    typealias Item = Media
+extension LikeSection : AnimatableSectionModelType {
+    typealias Item = LikedMedia
 
     var identity: String {
         return header
     }
 
-    init(original: MySection, items: [Item]) {
+    init(original: LikeSection, items: [Item]) {
         self = original
         self.items = items
     }
@@ -33,28 +33,35 @@ final class LikeViewController: BaseViewController<LikeView> {
     private let viewModel = LikeViewModel()
     private let disposeBag = DisposeBag()
     
-    private let fetchData = PublishSubject<Void>()
+    private let viewLoad = PublishSubject<Void>()
     private let swipeDeleteButtonTapped = PublishSubject<Int>()
+    private let playImageButtonTapped = PublishSubject<Void>()
     
-    
-    private var dataSource: RxTableViewSectionedAnimatedDataSource<MySection>!
+    private var dataSource: RxTableViewSectionedAnimatedDataSource<LikeSection>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationItem.title = "내가 찜한 리스트"
-        self.fetchData.onNext(())
+        self.viewLoad.onNext(())
     }
     
     private func setupTableView() {
         //dataSouce 설정
-        let dataSource = RxTableViewSectionedAnimatedDataSource<MySection>(
+        let dataSource = RxTableViewSectionedAnimatedDataSource<LikeSection>(
             animationConfiguration: AnimationConfiguration(deleteAnimation: .right), configureCell: { dataSource, tableView, indexPath, item in
                 guard let cell = tableView.dequeueReusableCell(withIdentifier: MediaBackdropTableViewCell.identifier, for: indexPath) as? MediaBackdropTableViewCell else {
                     return UITableViewCell()
                 }
                 
-                cell.searchConfigure(item)
+                cell.likeConfigure(item)
+                
+                cell.playImage.rx.tap
+                    .bind(with: self, onNext: { owner, _ in
+                        owner.playImageButtonTapped.onNext(())
+                    })
+                    .disposed(by: cell.disposeBag)
+                
                 return cell
             }
         )
@@ -79,8 +86,9 @@ final class LikeViewController: BaseViewController<LikeView> {
         self.setupTableView()
         
         let input = LikeViewModel.Input(
-            fetchData: fetchData,
-            swipeDeleteButtonTapped: swipeDeleteButtonTapped
+            viewDidLoad: viewLoad,
+            swipeDeleteButtonTapped: swipeDeleteButtonTapped,
+            playImageButtonTapped: playImageButtonTapped
         )
         let output = viewModel.transform(input: input)
         
@@ -88,7 +96,11 @@ final class LikeViewController: BaseViewController<LikeView> {
             .bind(to: rootView.tableView.rx.items(dataSource: self.dataSource))
             .disposed(by: disposeBag)
         
-        
+        output.playImageButtonTapped
+            .bind(with: self) { owner, _ in
+                print("버튼 선택됨")
+            }
+            .disposed(by: disposeBag)
     }
 }
 

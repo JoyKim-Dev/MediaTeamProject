@@ -6,13 +6,8 @@
 //
 
 import Foundation
-import RxDataSources
 
-struct Media: Decodable, Equatable, IdentifiableType {
-    var identity: some Hashable {
-        return self.id
-    }
-    
+struct Media: Decodable {
     let id: Int
     let name: String?
     let title: String?
