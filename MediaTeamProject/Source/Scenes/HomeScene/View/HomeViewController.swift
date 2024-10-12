@@ -19,8 +19,7 @@ final class HomeViewController: BaseViewController<HomeView> {
     private var movieTrendList = BehaviorRelay<[Media]>(value: [])
     private var tvTrendList = BehaviorRelay<[Media]>(value: [])
     private let mainPosterMedia = PublishSubject<Media>()
-    private let tvGenreList = BehaviorRelay<[Genre]>(value: [])
-    private let movieGenreList = BehaviorRelay<[Genre]>(value: [])
+    private let genreResult = PublishSubject<[String]>()
     
     private let viewWillAppearTrigger = PublishSubject<Void>()
     
@@ -76,33 +75,6 @@ extension HomeViewController {
             })
             .disposed(by: disposeBag)
         
-        
-        output.movieGenreList
-            .subscribe(onNext: { [weak self] result in
-                switch result {
-                case .success(let genre):
-                    let list = genre.genres
-                    self?.movieGenreList.accept(list)
-//                    self?.updatePosterImage()
-                case .failure(let error):
-                    print("movie장르 바인딩 실패: \(error)")
-                }
-            })
-            .disposed(by: disposeBag)
-        
-        output.tvGenreList
-            .subscribe(onNext: { [weak self] result in
-                switch result {
-                case .success(let genre):
-                    let list = genre.genres
-                    self?.tvGenreList.accept(list)
-//                    self?.updatePosterImage()
-                case .failure(let error):
-                    print("movie장르 바인딩 실패: \(error)")
-                }
-            })
-            .disposed(by: disposeBag)
-        
         movieTrendList
             .map { Array($0.prefix(10)) }
             .bind(to: rootView.movieCollectionView.rx.items(cellIdentifier: MediaPosterCell.identifier, cellType: MediaPosterCell.self)) {
@@ -121,8 +93,14 @@ extension HomeViewController {
             }
             .disposed(by: disposeBag)
         
+        output.genreResult
+                 .subscribe(onNext: { [weak self] genreNames in
+                     print(genreNames)
+                     self?.rootView.genreLabel.text = genreNames.isEmpty ? "장르 정보 없음" : genreNames.joined(separator: ", ")
+                 })
+                 .disposed(by: disposeBag)
     }
-    
+
     private func updatePosterImage() {
         let combinedList = movieTrendList.value + tvTrendList.value
         
@@ -131,30 +109,10 @@ extension HomeViewController {
             self.rootView.posterImageView.image = UIImage(systemName: "star")
             return
         }
+
         mainPosterMedia.onNext(randomMedia)
-        let URL =
-        APIURL.makeTMDBImageURL(path: posterPath)
-        self.rootView.posterImageView.kf.setImage(with: URL)
+        let url = APIURL.makeTMDBImageURL(path: posterPath)
+        self.rootView.posterImageView.kf.setImage(with: url)
         self.rootView.posterImageView.contentMode = .scaleAspectFill
-        
     }
-    
-    private func updatePosterGenre() {
-        let combinedList = movieGenreList.value + tvGenreList.value
-        let selectedPosterGenre = mainPosterMedia.map({ $0.genre_ids })
-        
-        let genreDictionary = Dictionary(uniqueKeysWithValues: combinedList.map { ($0.id, $0.name) })
-        let name = selectedPosterGenre.map { genreIds in
-            genreIds.compactMap { genreDictionary[$0] }
-        }
-        
-        
-    }
-    
-    func updateGenreLabel(with combinedList: [Genre], selectedPosterGenre: [Int]) {
-           let genreDictionary = Dictionary(uniqueKeysWithValues: combinedList.map { ($0.id, $0.name) })
-           let genreNames = selectedPosterGenre.compactMap { genreDictionary[$0] }
-           let genreText = genreNames.joined(separator: " / ")
-            self.rootView.genreLabel.text = genreText
-       }
-}
+   }

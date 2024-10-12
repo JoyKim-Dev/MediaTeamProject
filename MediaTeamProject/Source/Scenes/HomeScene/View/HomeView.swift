@@ -26,9 +26,9 @@ final class HomeView: BaseView {
         return label
     }()
     
-    private let playButton = {
-        let button = UIButton.Configuration.roundCornerButton(title: AppStrings.ButtonTitle.play, backgroundColor: .myAppWhite, foregroundColor: .myAppBlack, appIcon: AppIcon.play!)
-        return button
+     let playButton = {
+         let button = UIButton.Configuration.roundCornerButton(title: AppStrings.ButtonTitle.play, backgroundColor: .myAppWhite, foregroundColor: .myAppBlack, appIcon: AppIcon.play!)
+         return button
     }()
     
     private let likeButton = {
