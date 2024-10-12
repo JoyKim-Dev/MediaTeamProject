@@ -56,7 +56,7 @@ final class SearchViewController: BaseViewController<SearchView> {
             let (selectedMedia, indexPath) = data
             let detailViewModel = DetailViewModel(media: selectedMedia)
             let detailVC = DetailViewController(viewModel: detailViewModel)
-            owner.navigationController?.pushViewController(detailVC, animated: true)
+            owner.present(detailVC, animated: true)
             owner.rootView.recommendTableView.deselectRow(at: indexPath, animated: true)
         })
         .disposed(by: viewModel.disposeBag)
@@ -69,7 +69,7 @@ final class SearchViewController: BaseViewController<SearchView> {
             let (selectedMedia, indexPath) = data
             let detailViewModel = DetailViewModel(media: selectedMedia)
             let detailVC = DetailViewController(viewModel: detailViewModel)
-            owner.navigationController?.pushViewController(detailVC, animated: true)
+            owner.present(detailVC, animated: true)
             owner.rootView.recommendTableView.deselectRow(at: indexPath, animated: true)
         })
         .disposed(by: viewModel.disposeBag)
