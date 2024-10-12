@@ -41,6 +41,9 @@
 		445945D02CB95E42008D32A4 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445945CF2CB95E42008D32A4 /* DetailViewController.swift */; };
 		445945D22CB95E4D008D32A4 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445945D12CB95E4D008D32A4 /* DetailViewModel.swift */; };
 		445945D42CB968EE008D32A4 /* BackgroundIconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445945D32CB968EE008D32A4 /* BackgroundIconButton.swift */; };
+		445945DE2CBA7240008D32A4 /* PopupMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445945DD2CBA7240008D32A4 /* PopupMessageViewController.swift */; };
+		445945E02CBA7248008D32A4 /* PopupMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445945DF2CBA7248008D32A4 /* PopupMessageView.swift */; };
+		445945E22CBA7255008D32A4 /* PopupMessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445945E12CBA7255008D32A4 /* PopupMessageViewModel.swift */; };
 		727B1EA22CB67063002297DD /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 727B1EA12CB67063002297DD /* Kingfisher */; };
 		727B1EA52CB67070002297DD /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 727B1EA42CB67070002297DD /* Toast */; };
 		727B1EA82CB670AA002297DD /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 727B1EA72CB670AA002297DD /* Alamofire */; };
@@ -115,6 +118,9 @@
 		445945CF2CB95E42008D32A4 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		445945D12CB95E4D008D32A4 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		445945D32CB968EE008D32A4 /* BackgroundIconButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundIconButton.swift; sourceTree = "<group>"; };
+		445945DD2CBA7240008D32A4 /* PopupMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupMessageViewController.swift; sourceTree = "<group>"; };
+		445945DF2CBA7248008D32A4 /* PopupMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupMessageView.swift; sourceTree = "<group>"; };
+		445945E12CBA7255008D32A4 /* PopupMessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupMessageViewModel.swift; sourceTree = "<group>"; };
 		7297ACE12CB6A45500AE3800 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		7297ACE32CB6A7F000AE3800 /* AppStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStrings.swift; sourceTree = "<group>"; };
 		7297ACE92CB78DE500AE3800 /* MediaBackdropTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaBackdropTableViewCell.swift; sourceTree = "<group>"; };
@@ -300,6 +306,8 @@
 			children = (
 				445945CF2CB95E42008D32A4 /* DetailViewController.swift */,
 				445945CD2CB95E39008D32A4 /* DetailView.swift */,
+				445945DD2CBA7240008D32A4 /* PopupMessageViewController.swift */,
+				445945DF2CBA7248008D32A4 /* PopupMessageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -308,6 +316,7 @@
 			isa = PBXGroup;
 			children = (
 				445945D12CB95E4D008D32A4 /* DetailViewModel.swift */,
+				445945E12CBA7255008D32A4 /* PopupMessageViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -515,6 +524,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				445945DE2CBA7240008D32A4 /* PopupMessageViewController.swift in Sources */,
 				4401614E2CB6C574004EC740 /* Router.swift in Sources */,
 				3582A5102CB6AFF80031DDB3 /* HomeViewModel.swift in Sources */,
 				445945D22CB95E4D008D32A4 /* DetailViewModel.swift in Sources */,
@@ -529,6 +539,7 @@
 				440161522CB6C693004EC740 /* NetworkError.swift in Sources */,
 				440161572CB6C7A0004EC740 /* Media.swift in Sources */,
 				7297ACE42CB6A7F000AE3800 /* AppStrings.swift in Sources */,
+				445945E22CBA7255008D32A4 /* PopupMessageViewModel.swift in Sources */,
 				4401615D2CB6C7E2004EC740 /* Search.swift in Sources */,
 				4401616E2CB6D7BE004EC740 /* LikeView.swift in Sources */,
 				440161702CB6D845004EC740 /* LikeViewModel.swift in Sources */,
@@ -543,6 +554,7 @@
 				3582A4EB2CB637DA0031DDB3 /* AppDelegate.swift in Sources */,
 				7297AD312CB94B6D00AE3800 /* ReachedBottom.swift in Sources */,
 				4401616C2CB6D73B004EC740 /* LikeViewController.swift in Sources */,
+				445945E02CBA7248008D32A4 /* PopupMessageView.swift in Sources */,
 				445945D42CB968EE008D32A4 /* BackgroundIconButton.swift in Sources */,
 				445945D02CB95E42008D32A4 /* DetailViewController.swift in Sources */,
 				72A3AB182CB64056005FBCDD /* SearchView.swift in Sources */,

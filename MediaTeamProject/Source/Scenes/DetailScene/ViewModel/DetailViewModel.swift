@@ -17,6 +17,11 @@ final class DetailViewModel: BaseViewModel {
     private let directings = PublishSubject<[String]>()
     private let similars = PublishSubject<[Similar]>()
     
+    enum MessageType {
+        case newSave
+        case alreadySave
+    }
+    
     let disposeBag = DisposeBag()
     
     init(media: Media) {
@@ -40,7 +45,8 @@ final class DetailViewModel: BaseViewModel {
         let similars: PublishSubject<[Similar]>
         let xCircleButtonTapped: ControlEvent<Void>
         let tvCircleButtonTapped: ControlEvent<Void>
-        let showPopupMessageView: PublishSubject<Void>
+        let showPopupMessageView: PublishSubject<MessageType>
+        
     }
     
     func transform(input: Input) -> Output {
@@ -55,7 +61,7 @@ final class DetailViewModel: BaseViewModel {
             .map { String($0) }
         let overview =  media.map { $0.overview }
         
-        let showPopupMessageView = PublishSubject<Void>()
+        let showPopupMessageView = PublishSubject<MessageType>()
         
         media
             .bind(with: self) { owner, data in
@@ -72,17 +78,22 @@ final class DetailViewModel: BaseViewModel {
         input.saveButtonTapped
             .bind(with: self) { owner, _ in
                 //렘 저장 처리
+                let findItem = RealmRepository.shared.fetchitem(owner.media.id)
                 
-            
-                showPopupMessageView.onNext(())
+                if findItem == nil {
+                    //저장된 미디어가 아닌 경우
+                    let newItem = LikedMedia(id: owner.media.id, backdropPath: owner.media.backdrop_path ?? "", title: owner.media.mediaTitle, vote_average: owner.media.vote_average, overview: owner.media.overview ?? "", mediaType: owner.media.media_type ?? "", date: Date())
+                    
+                    RealmRepository.shared.addItem(newItem)
+                    
+                    showPopupMessageView.onNext((MessageType.newSave))
+                } else {
+                    //이미 저장된 미디어인 경우
+                    showPopupMessageView.onNext((MessageType.alreadySave))
+                }
             }
             .disposed(by: disposeBag)
             
-        
-        
-        
-        
-        
         
         return Output(
             backdropPosterURL: backdropPosterURL,

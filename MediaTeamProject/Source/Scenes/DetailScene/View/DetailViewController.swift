@@ -107,15 +107,20 @@ final class DetailViewController: BaseViewController<DetailView> {
             .disposed(by: disposeBag)
         
         output.showPopupMessageView
-            .bind(with: self) { owner, _ in
+            .bind(with: self) { owner, messageType in
+                var vc: PopupMessageViewController
+                switch messageType {
+                case .newSave:
+                    vc = PopupMessageViewController(viewModel: PopupMessageViewModel(messageType: .newSave))
+                case .alreadySave:
+                    vc = PopupMessageViewController(viewModel: PopupMessageViewModel(messageType: .alreadySave))
+                }
                 
+                vc.modalPresentationStyle = .overFullScreen
+                vc.modalTransitionStyle = .crossDissolve
+                owner.present(vc, animated: true)
             }
             .disposed(by: disposeBag)
-        
-        
-        
-        
-            
     }
 }
 
