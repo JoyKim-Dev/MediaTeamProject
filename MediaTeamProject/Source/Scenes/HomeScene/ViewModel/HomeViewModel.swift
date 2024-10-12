@@ -22,13 +22,15 @@ final class HomeViewModel: BaseViewModel {
         let movieTrendList: Observable<Result<TrendingResponse, NetworkError>>
         let tvTrendList: Observable<Result<TrendingResponse, NetworkError>>
         let genreResult: Observable<[String]>
+        let randomMedia: Observable<Media?>
     }
     
     func transform(input: Input) -> Output {
         let movieTrendListResultSubject = PublishSubject<Result<TrendingResponse, NetworkError>>()
         let tvTrendListResultSubject = PublishSubject<Result<TrendingResponse, NetworkError>>()
         let genreResultSubject = PublishSubject<[String]>()
-  
+        let randomMediaSubject = PublishSubject<Media?>()
+   
         input.viewWillAppear
             .flatMap { _ in
                 Observable.zip(
@@ -53,6 +55,12 @@ final class HomeViewModel: BaseViewModel {
             .subscribe(onNext: { [weak movieTrendListResultSubject, weak tvTrendListResultSubject] (movieResult, tvResult) in
                 movieTrendListResultSubject?.onNext(movieResult)
                 tvTrendListResultSubject?.onNext(tvResult)
+                
+                let movieMediaList = (try? movieResult.get().results) ?? []
+                let tvMediaList = (try? tvResult.get().results) ?? []
+                           let combinedList = movieMediaList + tvMediaList
+
+                           randomMediaSubject.onNext(combinedList.randomElement())
             })
             .disposed(by: disposeBag)
         
@@ -73,7 +81,7 @@ final class HomeViewModel: BaseViewModel {
         return Output(
             movieTrendList: movieTrendListResultSubject,
             tvTrendList: tvTrendListResultSubject,
-            genreResult: genreResultSubject
+            genreResult: genreResultSubject, randomMedia: randomMediaSubject
         )
     }
     

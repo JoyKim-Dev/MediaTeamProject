@@ -15,6 +15,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         AppAppearance.setupAppearance()
+        
+        let config = Realm.Configuration(schemaVersion: 2) { migration, oldSchemaVersion in
+            
+            if oldSchemaVersion < 1 {
+                // RealmModel property 옵셔널 수정
+            }
+            if oldSchemaVersion < 2 {
+                // RealmModel property 옵셔널 수정
+            }
+        }
+            Realm.Configuration.defaultConfiguration = config
+
+        
         return true
     }
 

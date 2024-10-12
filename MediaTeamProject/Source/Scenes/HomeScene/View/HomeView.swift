@@ -31,7 +31,7 @@ final class HomeView: BaseView {
          return button
     }()
     
-    private let likeButton = {
+     let likeButton = {
         let button = UIButton.Configuration.roundCornerButton(title: AppStrings.ButtonTitle.addToList, backgroundColor: .myAppBlack, foregroundColor: .myAppWhite, appIcon: AppIcon.plus!)
         return button
     }()

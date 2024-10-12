@@ -46,7 +46,6 @@
 		7297ACE42CB6A7F000AE3800 /* AppStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7297ACE32CB6A7F000AE3800 /* AppStrings.swift */; };
 		7297ACEA2CB78DE500AE3800 /* MediaBackdropTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7297ACE92CB78DE500AE3800 /* MediaBackdropTableViewCell.swift */; };
 		7297AD312CB94B6D00AE3800 /* ReachedBottom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7297AD302CB94B6D00AE3800 /* ReachedBottom.swift */; };
-		7297AD332CB954BA00AE3800 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7297AD322CB954BA00AE3800 /* APIKey.swift */; };
 		72A3AAFF2CB63B93005FBCDD /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 72A3AAFE2CB63B93005FBCDD /* .gitignore */; };
 		72A3AB052CB63C95005FBCDD /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A3AB042CB63C95005FBCDD /* BaseView.swift */; };
 		72A3AB072CB63CA6005FBCDD /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A3AB062CB63CA6005FBCDD /* BaseViewController.swift */; };
@@ -114,7 +113,6 @@
 		7297ACE92CB78DE500AE3800 /* MediaBackdropTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaBackdropTableViewCell.swift; sourceTree = "<group>"; };
 		7297ACEE2CB7A2D200AE3800 /* APIKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		7297AD302CB94B6D00AE3800 /* ReachedBottom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachedBottom.swift; sourceTree = "<group>"; };
-		7297AD322CB954BA00AE3800 /* APIKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIKey.swift; path = ../../../../APIKey/APIKey.swift; sourceTree = "<group>"; };
 		72A3AAFE2CB63B93005FBCDD /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		72A3AB042CB63C95005FBCDD /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		72A3AB062CB63CA6005FBCDD /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -231,7 +229,6 @@
 		4401614A2CB6C4FF004EC740 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				7297AD322CB954BA00AE3800 /* APIKey.swift */,
 				4401614D2CB6C574004EC740 /* Router.swift */,
 				4401614F2CB6C595004EC740 /* TargetType.swift */,
 				440161512CB6C693004EC740 /* NetworkError.swift */,
@@ -522,7 +519,6 @@
 				3582A5122CB6BC5A0031DDB3 /* MediaPosterCell.swift in Sources */,
 				440161542CB6C6E4004EC740 /* NetworkManager.swift in Sources */,
 				3582A5022CB670F30031DDB3 /* RealmRepository.swift in Sources */,
-				7297AD332CB954BA00AE3800 /* APIKey.swift in Sources */,
 				440161632CB6C814004EC740 /* Video.swift in Sources */,
 				72A3AB0E2CB63D0F005FBCDD /* BaseViewModel.swift in Sources */,
 				354670EB2CB7DF8D002C16FE /* APIKey.swift in Sources */,
