@@ -119,6 +119,21 @@ extension HomeViewController {
                 cell.layer.cornerRadius = 10
             }
             .disposed(by: disposeBag)
+        
+        rootView.movieCollectionView.rx.modelSelected(Media.self)
+                   .bind(with: self) { owner, media in
+                       let detailVC = DetailViewController(viewModel: DetailViewModel(media: media))
+                       owner.present(detailVC, animated: true)
+                   }
+                   .disposed(by: disposeBag)
+               
+        
+               rootView.tvCollectionView.rx.modelSelected(Media.self)
+                   .bind(with: self) { owner, media in
+                       let detailVC = DetailViewController(viewModel: DetailViewModel(media: media))
+                       owner.present(detailVC, animated: true)
+                   }
+                   .disposed(by: disposeBag)
     }
     
     
