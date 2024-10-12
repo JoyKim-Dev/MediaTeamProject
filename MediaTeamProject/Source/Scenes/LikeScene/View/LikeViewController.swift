@@ -9,7 +9,6 @@ import UIKit
 import RxSwift
 import RxDataSources
 
-
 struct LikeSection {
     var header: String
     var items: [Item]
@@ -103,6 +102,16 @@ final class LikeViewController: BaseViewController<LikeView> {
         output.playImageButtonTapped
             .bind(with: self) { owner, _ in
                 print("버튼 선택됨")
+            }
+            .disposed(by: disposeBag)
+        
+        rootView.tableView.rx.modelSelected(LikedMedia.self)
+            .bind(with: self) { owner, data in
+                //미디어 상세화면에서 받는 데이터 모델로 변경
+                let media = Media(id: data.id, name: data.title, title: data.title, overview: data.overview, poster_path: nil, backdrop_path: data.backdropPath, genre_ids: [], vote_average: data.vote_average, media_type: data.mediaType)
+                //데이터 전달 및 화면전환
+                let detailVC = DetailViewController(viewModel: DetailViewModel(media: media))
+                owner.present(detailVC, animated: true)
             }
             .disposed(by: disposeBag)
     }
