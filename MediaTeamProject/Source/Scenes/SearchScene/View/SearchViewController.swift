@@ -47,6 +47,33 @@ final class SearchViewController: BaseViewController<SearchView> {
                     cell.configUI(data: item)
                 }
                 .disposed(by: viewModel.disposeBag)
+        
+        Observable.zip(
+            rootView.recommendTableView.rx.modelSelected(Media.self),
+            rootView.recommendTableView.rx.itemSelected
+        )
+        .bind(with: self, onNext: { owner, data in
+            let (selectedMedia, indexPath) = data
+            let detailViewModel = DetailViewModel(media: selectedMedia)
+            let detailVC = DetailViewController(viewModel: detailViewModel)
+            owner.navigationController?.pushViewController(detailVC, animated: true)
+            owner.rootView.recommendTableView.deselectRow(at: indexPath, animated: true)
+        })
+        .disposed(by: viewModel.disposeBag)
+        
+        Observable.zip(
+            rootView.collectionView.rx.modelSelected(Media.self),
+            rootView.collectionView.rx.itemSelected
+        )
+        .bind(with: self, onNext: { owner, data in
+            let (selectedMedia, indexPath) = data
+            let detailViewModel = DetailViewModel(media: selectedMedia)
+            let detailVC = DetailViewController(viewModel: detailViewModel)
+            owner.navigationController?.pushViewController(detailVC, animated: true)
+            owner.rootView.recommendTableView.deselectRow(at: indexPath, animated: true)
+        })
+        .disposed(by: viewModel.disposeBag)
+        
     }
     
 }
