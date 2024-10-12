@@ -20,18 +20,18 @@ final class HomeView: BaseView {
         return imageView
     }()
     
-    private let genreLabel = {
+    lazy var genreLabel = {
         let label = UILabel()
-        label.text = "test"
+     //   label.text = "test"
         return label
     }()
     
-    private let playButton = {
-        let button = UIButton.Configuration.roundCornerButton(title: AppStrings.ButtonTitle.play, backgroundColor: .myAppWhite, foregroundColor: .myAppBlack, appIcon: AppIcon.play!)
-        return button
+     let playButton = {
+         let button = UIButton.Configuration.roundCornerButton(title: AppStrings.ButtonTitle.play, backgroundColor: .myAppWhite, foregroundColor: .myAppBlack, appIcon: AppIcon.play!)
+         return button
     }()
     
-    private let likeButton = {
+     let likeButton = {
         let button = UIButton.Configuration.roundCornerButton(title: AppStrings.ButtonTitle.addToList, backgroundColor: .myAppBlack, foregroundColor: .myAppWhite, appIcon: AppIcon.plus!)
         return button
     }()
