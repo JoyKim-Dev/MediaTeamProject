@@ -146,7 +146,7 @@ final class HomeView: BaseView {
     }
     
     override func configureView() {
-        
+        playButton.tintColor = .myAppBlack
     }
 }
 

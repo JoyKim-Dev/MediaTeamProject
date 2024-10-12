@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3508A1752CBA992500A60472 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3508A1742CBA992500A60472 /* APIKey.swift */; };
 		354670E92CB7B758002C16FE /* AppAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 354670E82CB7B758002C16FE /* AppAppearance.swift */; };
 		3582A4EB2CB637DA0031DDB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582A4EA2CB637DA0031DDB3 /* AppDelegate.swift */; };
 		3582A4ED2CB637DA0031DDB3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582A4EC2CB637DA0031DDB3 /* SceneDelegate.swift */; };
@@ -36,7 +37,6 @@
 		440161702CB6D845004EC740 /* LikeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4401616F2CB6D845004EC740 /* LikeViewModel.swift */; };
 		445945992CB81DD3008D32A4 /* Differentiator in Frameworks */ = {isa = PBXBuildFile; productRef = 445945982CB81DD3008D32A4 /* Differentiator */; };
 		4459459B2CB81DD3008D32A4 /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = 4459459A2CB81DD3008D32A4 /* RxDataSources */; };
-		445945C92CB95B74008D32A4 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445945C82CB95B74008D32A4 /* APIKey.swift */; };
 		445945CE2CB95E39008D32A4 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445945CD2CB95E39008D32A4 /* DetailView.swift */; };
 		445945D02CB95E42008D32A4 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445945CF2CB95E42008D32A4 /* DetailViewController.swift */; };
 		445945D22CB95E4D008D32A4 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445945D12CB95E4D008D32A4 /* DetailViewModel.swift */; };
@@ -84,6 +84,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3508A1742CBA992500A60472 /* APIKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIKey.swift; path = ../../../../APIKey.swift; sourceTree = "<group>"; };
 		354670E82CB7B758002C16FE /* AppAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAppearance.swift; sourceTree = "<group>"; };
 		3582A4E72CB637DA0031DDB3 /* MediaTeamProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MediaTeamProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3582A4EA2CB637DA0031DDB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -113,7 +114,6 @@
 		4401616B2CB6D73B004EC740 /* LikeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeViewController.swift; sourceTree = "<group>"; };
 		4401616D2CB6D7BE004EC740 /* LikeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeView.swift; sourceTree = "<group>"; };
 		4401616F2CB6D845004EC740 /* LikeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeViewModel.swift; sourceTree = "<group>"; };
-		445945C82CB95B74008D32A4 /* APIKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIKey.swift; path = ../../../../../../../Downloads/APIKey.swift; sourceTree = "<group>"; };
 		445945CD2CB95E39008D32A4 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		445945CF2CB95E42008D32A4 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		445945D12CB95E4D008D32A4 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
@@ -242,7 +242,7 @@
 		4401614A2CB6C4FF004EC740 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				445945C82CB95B74008D32A4 /* APIKey.swift */,
+				3508A1742CBA992500A60472 /* APIKey.swift */,
 				4401614D2CB6C574004EC740 /* Router.swift */,
 				4401614F2CB6C595004EC740 /* TargetType.swift */,
 				440161512CB6C693004EC740 /* NetworkError.swift */,
@@ -559,13 +559,13 @@
 				445945D02CB95E42008D32A4 /* DetailViewController.swift in Sources */,
 				72A3AB182CB64056005FBCDD /* SearchView.swift in Sources */,
 				3582A4ED2CB637DA0031DDB3 /* SceneDelegate.swift in Sources */,
+				3508A1752CBA992500A60472 /* APIKey.swift in Sources */,
 				72A3AB1A2CB64094005FBCDD /* SearchViewModel.swift in Sources */,
 				72A3AB272CB66949005FBCDD /* AppColors.swift in Sources */,
 				3582A5162CB6CE8D0031DDB3 /* RoundCornerButton.swift in Sources */,
 				72A3AB052CB63C95005FBCDD /* BaseView.swift in Sources */,
 				4401615F2CB6C7F1004EC740 /* Credit.swift in Sources */,
 				3582A5122CB6BC5A0031DDB3 /* MediaPosterCell.swift in Sources */,
-				445945C92CB95B74008D32A4 /* APIKey.swift in Sources */,
 				440161542CB6C6E4004EC740 /* NetworkManager.swift in Sources */,
 				3582A5022CB670F30031DDB3 /* RealmRepository.swift in Sources */,
 				440161632CB6C814004EC740 /* Video.swift in Sources */,

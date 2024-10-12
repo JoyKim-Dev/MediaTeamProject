@@ -76,25 +76,23 @@ extension HomeViewController {
             .disposed(by: disposeBag)
         
         output.genreResult
-                 .subscribe(onNext: { [weak self] genreNames in
-                     print(genreNames)
-                     self?.rootView.genreLabel.text = genreNames.isEmpty ? "장르 정보 없음" : genreNames.joined(separator: ", ")
-                 })
-                 .disposed(by: disposeBag)
+            .subscribe(onNext: { [weak self] genreNames in
+                self?.rootView.genreLabel.text = genreNames.isEmpty ? "장르 정보 없음" : genreNames.joined(separator: ", ")
+            })
+            .disposed(by: disposeBag)
         
         output.randomMedia
             .subscribe(onNext: { [weak self] media in
-                   guard let self = self else { return }
+                guard let self = self else { return }
                 if let media = media {
-                           print("Random media received: \(media)")
-                           self.mainPosterMedia.onNext(media)
-                       } else {
-                           print("Random media is nil")
-                       }
-                  
-               })
-               .disposed(by: disposeBag)
-            
+                    self.mainPosterMedia.onNext(media)
+                } else {
+
+                }
+                
+            })
+            .disposed(by: disposeBag)
+        
         mainPosterMedia
             .bind(with: self) { owner, media in
                 guard let posterpath = media.poster_path else {return}
@@ -121,46 +119,45 @@ extension HomeViewController {
                 cell.layer.cornerRadius = 10
             }
             .disposed(by: disposeBag)
-        
- 
-
     }
-
+    
     
     private func setupLikeButton() {
         rootView.likeButton.rx.tap
-               .do(onNext: { _ in
-                   print("Like button tapped")
-               })
-               .withLatestFrom(mainPosterMedia)
-               .subscribe(onNext: { [weak self] media in
-                   guard let self = self else {
-                       print("self is nil")
-                       return
-                   }
-
-                   if let existingMedia = realm.fetchitem(media.id) {
-                                 print("이미 저장된 미디어")
-                       let alert = UIAlertController(title: "알림", message: "이미 저장된 미디어입니다.", preferredStyle: .alert)
-                                      alert.addAction(UIAlertAction(title: "확인", style: .default))
-                                      self.present(alert, animated: true, completion: nil)
-                                 return
-                             }
-                   
-                   let likedMedia = LikedMedia(
-                       id: media.id,
-                       backdropPath: media.backdrop_path!,
-                       title: media.name ?? media.title ?? "미정",
-                       vote_average: media.vote_average,
-                       overview: media.overview!,
-                       mediaType: media.media_type!,
-                       date: Date()
-                   )
-print(likedMedia)
-                   rootView.likeButton.isUserInteractionEnabled = true
-                   RealmRepository.shared.addItem(likedMedia)
-                   print(realm.fileURL)
-               })
-               .disposed(by: disposeBag)
-       }
-   }
+            .do(onNext: { _ in
+            })
+            .withLatestFrom(mainPosterMedia)
+            .subscribe(onNext: { [weak self] media in
+                guard let self = self else {
+                    return
+                }
+                
+                if let existingMedia = realm.fetchitem(media.id) {
+                    
+                    let popupViewModel = PopupMessageViewModel(messageType: .alreadySave)
+                    let popupVC = PopupMessageViewController(viewModel: popupViewModel)
+                    popupVC.modalPresentationStyle = .overFullScreen
+                    self.present(popupVC, animated: true, completion: nil)
+                    return
+                }
+                
+                let likedMedia = LikedMedia(
+                    id: media.id,
+                    backdropPath: media.backdrop_path!,
+                    title: media.name ?? media.title ?? "미정",
+                    vote_average: media.vote_average,
+                    overview: media.overview!,
+                    mediaType: media.media_type!,
+                    date: Date()
+                )
+                print(likedMedia)
+                rootView.likeButton.isUserInteractionEnabled = true
+                RealmRepository.shared.addItem(likedMedia)
+                let popupViewModel = PopupMessageViewModel(messageType: .newSave)
+                let popupVC = PopupMessageViewController(viewModel: popupViewModel)
+                popupVC.modalPresentationStyle = .overFullScreen
+                self.present(popupVC, animated: true, completion: nil)
+            })
+            .disposed(by: disposeBag)
+    }
+}
