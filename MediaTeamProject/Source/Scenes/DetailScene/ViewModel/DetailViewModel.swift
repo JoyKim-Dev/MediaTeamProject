@@ -16,6 +16,8 @@ final class DetailViewModel: BaseViewModel {
     private let actings = PublishSubject<[String]>()
     private let directings = PublishSubject<[String]>()
     private let similars = PublishSubject<[Similar]>()
+    private let creditsNetworkError = PublishSubject<Void>()
+    private let similarNetworkError = PublishSubject<Void>()
     
     enum MessageType {
         case newSave
@@ -46,7 +48,8 @@ final class DetailViewModel: BaseViewModel {
         let xCircleButtonTapped: ControlEvent<Void>
         let tvCircleButtonTapped: ControlEvent<Void>
         let showPopupMessageView: PublishSubject<MessageType>
-        
+        let creditsNetworkError: PublishSubject<Void>
+        let similarNetworkError: PublishSubject<Void>
     }
     
     func transform(input: Input) -> Output {
@@ -62,6 +65,7 @@ final class DetailViewModel: BaseViewModel {
         let overview =  media.map { $0.overview }
         
         let showPopupMessageView = PublishSubject<MessageType>()
+        
         
         media
             .bind(with: self) { owner, data in
@@ -105,7 +109,9 @@ final class DetailViewModel: BaseViewModel {
             similars: similars,
             xCircleButtonTapped: input.xCircleButtonTapped,
             tvCircleButtonTapped: input.tvCircleButtonTapped,
-            showPopupMessageView: showPopupMessageView
+            showPopupMessageView: showPopupMessageView,
+            creditsNetworkError: creditsNetworkError,
+            similarNetworkError: similarNetworkError
         )
     }
 }
@@ -135,6 +141,7 @@ extension DetailViewModel {
                 
                 case .failure(let error):
                     print(error)
+                    owner.creditsNetworkError.onNext(())
                 }
             }
             .disposed(by: disposeBag)
@@ -159,6 +166,7 @@ extension DetailViewModel {
                 
                 case .failure(let error):
                     print(error)
+                    owner.similarNetworkError.onNext(())
                 }
             }
             .disposed(by: disposeBag)

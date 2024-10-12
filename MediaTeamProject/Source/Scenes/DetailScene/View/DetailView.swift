@@ -95,7 +95,7 @@ final class DetailView: BaseView {
         return label
     }()
     
-    private let similarTitleLabel: UILabel = {
+    let similarTitleLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 15, weight: .bold)
         label.text = "비슷한 콘텐츠"

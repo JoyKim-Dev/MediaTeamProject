@@ -121,6 +121,20 @@ final class DetailViewController: BaseViewController<DetailView> {
                 owner.present(vc, animated: true)
             }
             .disposed(by: disposeBag)
+        
+        output.creditsNetworkError
+            .bind(with: self) { owner, _ in
+                owner.rootView.actingLabel.isHidden = true
+                owner.rootView.directingLabel.isHidden = true
+            }
+            .disposed(by: disposeBag)
+        
+        output.similarNetworkError
+            .bind(with: self) { owner, _ in
+                owner.rootView.similarTitleLabel.isHidden = true
+                owner.rootView.collectionView.isHidden = true
+            }
+            .disposed(by: disposeBag)
     }
 }
 
