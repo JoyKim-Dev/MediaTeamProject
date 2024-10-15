@@ -4,11 +4,11 @@
 
 + 프로젝트 기간: 2024.10.08 ~ 2024.10.12 
 + 3인 개발
-  
-|김연정|권대윤|전준영|
+### iOS Developers
+|김연정|권대윤 |전준영|
 |:---:|:---:|:---:|
-|[<img src="https://avatars.githubusercontent.com/u/168106015?v=4" width="200">](https://github.com/JoyKim-Dev)|[<img src="https://avatars.githubusercontent.com/u/54786464?v=4" width="200">](https://github.com/daeyunkwon)|[<img src="https://avatars.githubusercontent.com/u/141925335?v=4" width="200">](https://github.com/Junyeong-J)|
-|DB 구축, 홈화면 구현|네트워크 구축,<br> 보관화면 구현, 상세화면 구현|초기설정, 검색화면 구현|
+|[<img src="https://avatars.githubusercontent.com/u/168106015?v=4" width="200"><br>**@Joy**](https://github.com/JoyKim-Dev)|[<img src="https://avatars.githubusercontent.com/u/54786464?v=4" width="200"><br>@**Daeyun**](https://github.com/daeyunkwon)|[<img src="https://avatars.githubusercontent.com/u/141925335?v=4" width="200"><br>**@Ethan**](https://github.com/Junyeong-J)|
+|`DB 구축`<br>`홈화면 구현`|`네트워크 구축`<br> `보관화면 구현`<br>`상세화면 구현`|`프로젝트 초기 설정 및 환경 구축`<br>`검색화면 구현`|
 
 ### Introduction
 
@@ -56,9 +56,9 @@
 + 선택한 미디어와 비슷한 미디어 목록을 보여줍니다. 
 
 ### Technology Stack 
-+ Framework : UIKit
-+ Pattern : MVVM, Alamofire/Router 패턴
-+ Library: RealmSwift, RxSwift, Alamofire, Kingfisher, SnapKit  
++ Framework : `UIKit`
++ Pattern : `MVVM` + `Input-Output Pattern`, `Alamofire` + `Router Pattern`
++ Library: `RealmSwift`, `RxSwift`, `Alamofire`, `Kingfisher`, `SnapKit` 
 
 ### Troubleshooting
 
@@ -95,5 +95,84 @@
 |---------------|---------------|
 | <img src="https://github.com/user-attachments/assets/1304ecc6-0b6f-41a2-810e-b92df95e370c" width="200"> | <img src="https://github.com/user-attachments/assets/cd8ec95e-b529-4363-95f7-e47e28b6c62e" width="200"> |
 
+
+
+
+### Foldering
+```
+📁 Project
+├── 📁 Application
+│   ├── AppDelegate.swift
+│   ├── SceneDelegate.swift
+│   ├── AppAppearance.swift
+│   └── Info.plist
+├── 📁 Resource
+│   ├── Assets.xcassets
+│   └── StoryBoard
+├── 📁 Source
+│   ├── 📁 TabBar
+│   │   └── TabBarController.swift
+│   ├── 📁 Database
+│   │   ├── LikedMedia.swift
+│   │   └── RealmRepository.swift
+│   ├── 📁 Network
+│   │   ├── APIKey.swift
+│   │   ├── Router.swift
+│   │   ├── TargetType.swift
+│   │   ├── NetworkError.swift
+│   │   └── NetworkManager.swift
+│   └── 📁 Model
+│       ├── Media.swift
+│       ├── Trending.swift
+│       ├── Genre.swift
+│       ├── Search.swift
+│       ├── Credit.swift
+│       ├── Similar.swift
+│       └── Video.swift
+├── 📁 Utilities
+│   ├── 📁 Protocols
+│   │   └── ReuseIdentifier+Protocol.swift
+│   ├── 📁 Extensions
+│   │    ├── RoundCornerButton.swift
+│   │    ├── ReachedBottom.swift
+│   │    └── BackgroundIconButton.swift
+│   ├─── AppColors.swift
+│   ├─── AppIcon.swift
+│   └─── AppStrings.swift
+├── 📁 Base
+│   ├─── BaseView.swift
+│   ├─── BaseViewController.swift
+│   ├─── BaseViewModel.swift
+│   ├─── BaseCollectionViewCell.swift
+│   └─── BaseTableViewCell.swift
+└── 📁 Scenes
+    ├── 📁 HomeScene
+    │   ├── View
+    │   │   ├── HomeViewController.swift
+    │   │   └── HomeView.swift
+    │   └── ViewModel
+    │       └── HomeViewModel.swift
+    ├── 📁 SearchScene
+    │    ├── View
+    │    │   ├── SearchViewController.swift
+    │    │   └── SearchView.swift
+    │    └── ViewModel
+    │        └── SearchViewModel.swift
+    ├── 📁 LikeScene
+    │    ├── View
+    │    │   ├── LikeViewController.swift
+    │    │   └── LikeView.swift
+    │    └── ViewModel
+    │        └── LikeViewModel.swift
+    └── 📁 DetailScene
+        ├── View
+        │   ├── DetailViewController.swift
+        │   ├── DetailView.swift
+        │   ├── PopupMessageViewController.swift
+        │   └── PopupMessageView.swift
+        └── ViewModel
+            ├── DetailViewModel.swift
+            └── PopupMessageViewModel.swift
+```
 
 
