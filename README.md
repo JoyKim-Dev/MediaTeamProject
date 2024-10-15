@@ -85,11 +85,16 @@
 
 ### Screenshots
 
-<img src="https://github.com/user-attachments/assets/1823cdb1-c7b9-43bc-a85e-13715930bce9" width="300">
-<img src="https://github.com/user-attachments/assets/bc5f830b-7105-4d3b-beff-0362a4482b5e" width="300">
-<img src="https://github.com/user-attachments/assets/a4cd76ab-94ef-4f0c-a300-708fefeeb039" width="300">
-<img src="https://github.com/user-attachments/assets/07ea6760-a7c7-4c75-8d34-2ff4d6be946a" width="300">
-<img src="https://github.com/user-attachments/assets/1304ecc6-0b6f-41a2-810e-b92df95e370c" width="300">
-<img src="https://github.com/user-attachments/assets/cd8ec95e-b529-4363-95f7-e47e28b6c62e" width="300">
+| 홈 화면 | 홈 화면 |
+|---------------|---------------|
+| <img src="https://github.com/user-attachments/assets/1823cdb1-c7b9-43bc-a85e-13715930bce9" width="250"> | <img src="https://github.com/user-attachments/assets/bc5f830b-7105-4d3b-beff-0362a4482b5e" width="250"> |
+
+| 검색 화면 | 검색 화면 |
+|---------------|---------------|
+| <img src="https://github.com/user-attachments/assets/a4cd76ab-94ef-4f0c-a300-708fefeeb039" width="250"> | <img src="https://github.com/user-attachments/assets/07ea6760-a7c7-4c75-8d34-2ff4d6be946a" width="250"> |
+
+| 보관 화면 | 상세 화면 |
+|---------------|---------------|
+| <img src="https://github.com/user-attachments/assets/1304ecc6-0b6f-41a2-810e-b92df95e370c" width="250"> | <img src="https://github.com/user-attachments/assets/cd8ec95e-b529-4363-95f7-e47e28b6c62e" width="250"> |
 
 
