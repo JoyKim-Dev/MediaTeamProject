@@ -1,7 +1,12 @@
 ## 마이미디어
 
-+ 3인 개발 
 + 프로젝트 기간: 2024.10.08 ~ 2024.10.12 
++ 3인 개발
+  
+|김연정|권대윤|전준영|
+|:---:|:---:|:---:|
+|[Daeyun](https://github.com/daeyunkwon)|[Joy](https://github.com/JoyKim-Dev)|[Ethan](https://github.com/Junyeong-J)|
+|DB 구축, 홈화면 구현|네트워크 구축, 보관화면 구현, 상세화면 구현|초기설정, 검색화면 구현|
 
 ### Introduction
 
