@@ -1,12 +1,14 @@
 ## 마이미디어
+![Swift](https://img.shields.io/badge/Swift-5.10-orange)
+![Xcode](https://img.shields.io/badge/Xcode-15.3-blue)
 
 + 프로젝트 기간: 2024.10.08 ~ 2024.10.12 
 + 3인 개발
   
 |김연정|권대윤|전준영|
 |:---:|:---:|:---:|
-|[Daeyun](https://github.com/daeyunkwon)|[Joy](https://github.com/JoyKim-Dev)|[Ethan](https://github.com/Junyeong-J)|
-|DB 구축, 홈화면 구현|네트워크 구축, 보관화면 구현, 상세화면 구현|초기설정, 검색화면 구현|
+|[<img src="https://avatars.githubusercontent.com/u/168106015?v=4" width="200">](https://github.com/JoyKim-Dev)|[<img src="https://avatars.githubusercontent.com/u/54786464?v=4" width="200">](https://github.com/daeyunkwon)|[<img src="https://avatars.githubusercontent.com/u/141925335?v=4" width="200">](https://github.com/Junyeong-J)|
+|DB 구축, 홈화면 구현|네트워크 구축,<br> 보관화면 구현, 상세화면 구현|초기설정, 검색화면 구현|
 
 ### Introduction
 
@@ -85,16 +87,13 @@
 
 ### Screenshots
 
-| 홈 화면 | 홈 화면 |
-|---------------|---------------|
-| <img src="https://github.com/user-attachments/assets/1823cdb1-c7b9-43bc-a85e-13715930bce9" width="250"> | <img src="https://github.com/user-attachments/assets/bc5f830b-7105-4d3b-beff-0362a4482b5e" width="250"> |
-
-| 검색 화면 | 검색 화면 |
-|---------------|---------------|
-| <img src="https://github.com/user-attachments/assets/a4cd76ab-94ef-4f0c-a300-708fefeeb039" width="250"> | <img src="https://github.com/user-attachments/assets/07ea6760-a7c7-4c75-8d34-2ff4d6be946a" width="250"> |
+| 홈 화면 | 홈 화면 | 검색 화면 | 검색 화면 |
+|---------------|---------------|---------------|---------------|
+| <img src="https://github.com/user-attachments/assets/1823cdb1-c7b9-43bc-a85e-13715930bce9" width="200"> | <img src="https://github.com/user-attachments/assets/bc5f830b-7105-4d3b-beff-0362a4482b5e" width="200"> | <img src="https://github.com/user-attachments/assets/a4cd76ab-94ef-4f0c-a300-708fefeeb039" width="200"> | <img src="https://github.com/user-attachments/assets/07ea6760-a7c7-4c75-8d34-2ff4d6be946a" width="200"> |
 
 | 보관 화면 | 상세 화면 |
 |---------------|---------------|
-| <img src="https://github.com/user-attachments/assets/1304ecc6-0b6f-41a2-810e-b92df95e370c" width="250"> | <img src="https://github.com/user-attachments/assets/cd8ec95e-b529-4363-95f7-e47e28b6c62e" width="250"> |
+| <img src="https://github.com/user-attachments/assets/1304ecc6-0b6f-41a2-810e-b92df95e370c" width="200"> | <img src="https://github.com/user-attachments/assets/cd8ec95e-b529-4363-95f7-e47e28b6c62e" width="200"> |
+
 
 
