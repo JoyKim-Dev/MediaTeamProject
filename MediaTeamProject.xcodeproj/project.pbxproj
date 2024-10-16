@@ -53,6 +53,7 @@
 		7297ACEA2CB78DE500AE3800 /* MediaBackdropTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7297ACE92CB78DE500AE3800 /* MediaBackdropTableViewCell.swift */; };
 		7297AD312CB94B6D00AE3800 /* ReachedBottom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7297AD302CB94B6D00AE3800 /* ReachedBottom.swift */; };
 		7297AD372CBAA81900AE3800 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7297AD362CBAA81900AE3800 /* APIKey.swift */; };
+		7297AD4B2CBF8DCA00AE3800 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7297AD4A2CBF8DCA00AE3800 /* Test.swift */; };
 		72A3AAFF2CB63B93005FBCDD /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 72A3AAFE2CB63B93005FBCDD /* .gitignore */; };
 		72A3AB052CB63C95005FBCDD /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A3AB042CB63C95005FBCDD /* BaseView.swift */; };
 		72A3AB072CB63CA6005FBCDD /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A3AB062CB63CA6005FBCDD /* BaseViewController.swift */; };
@@ -125,6 +126,7 @@
 		7297ACE92CB78DE500AE3800 /* MediaBackdropTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaBackdropTableViewCell.swift; sourceTree = "<group>"; };
 		7297AD302CB94B6D00AE3800 /* ReachedBottom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachedBottom.swift; sourceTree = "<group>"; };
 		7297AD362CBAA81900AE3800 /* APIKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIKey.swift; path = ../../../../APIKey/APIKey.swift; sourceTree = "<group>"; };
+		7297AD4A2CBF8DCA00AE3800 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		72A3AAFE2CB63B93005FBCDD /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		72A3AB042CB63C95005FBCDD /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		72A3AB062CB63CA6005FBCDD /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -336,6 +338,14 @@
 			name = "Recovered References";
 			sourceTree = "<group>";
 		};
+		7297AD492CBF8DC200AE3800 /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				7297AD4A2CBF8DCA00AE3800 /* Test.swift */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
 		72A3AB002CB63BEB005FBCDD /* Resource */ = {
 			isa = PBXGroup;
 			children = (
@@ -351,6 +361,7 @@
 		72A3AB012CB63BF2005FBCDD /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				7297AD492CBF8DC200AE3800 /* Test */,
 				7297ACE02CB6A41E00AE3800 /* TabBar */,
 				3582A4FE2CB670D40031DDB3 /* Database */,
 				4401614A2CB6C4FF004EC740 /* Network */,
@@ -529,6 +540,7 @@
 				3582A5102CB6AFF80031DDB3 /* HomeViewModel.swift in Sources */,
 				445945D22CB95E4D008D32A4 /* DetailViewModel.swift in Sources */,
 				440161502CB6C595004EC740 /* TargetType.swift in Sources */,
+				7297AD4B2CBF8DCA00AE3800 /* Test.swift in Sources */,
 				3582A51A2CB6D8420031DDB3 /* ReuseIdentifier+Protocol.swift in Sources */,
 				72A3AB1C2CB6409E005FBCDD /* SearchViewController.swift in Sources */,
 				72A3AB122CB63D4A005FBCDD /* BaseTableViewCell.swift in Sources */,
