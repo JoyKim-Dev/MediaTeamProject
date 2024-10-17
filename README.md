@@ -63,14 +63,61 @@
 
 ## 트러블슈팅
 
-### 문제 상황
-+ UIButton의 글자색이 흰색 외 색상으로 변경되지 않는 문제가 발생했습니다.
+### AppDelegate에서 UIAppearance를 사용하여 반복되는 UI 요소 전역 설정
++ 앱의 기본 테마가 검은색 배경이라 흰색 글자를 주로 쓰게 되었는데, 뷰객체를 생성하다보니 매번 흰 글자색을 설정하는 것이 불필요한 코드의 반복으로 느껴졌습니다.
   
-### 원인 분석
-+ AppDelegate에서 UILabel의 글자색을 흰색으로 전역 설정한 결과 UILabel을 상속받는 UIButton의 title 색상도 흰색으로 고정되는 것이 원인이었습니다.
-  
-### 해결 방안
-+ UIButton 초기화 시점에 원하는 색상을 다시 한번 명시하여 해결했습니다.
++  일회성으로 필요한 뷰객체가 다수였기 때문에 흰 글자색을 적용한 커스텀 뷰객체를 만들어 재사용을 하는 대신 UIAppearance를 활용하여 UILabel의 기본 글자색을 흰색으로 설정했습니다.
++  이를 구현하기 위해 setupAppearance() 라는 함수를 구현하여 `AppDelegate`에서 호출해 주었습니다.
+ ``` swift 
+final class AppAppearance {
+    static func setupAppearance() {
+        
+        let navBarAppearance = UINavigationBarAppearance()
+        let tapBarAppearance = UITabBarAppearance()
+        let labelTextAppearnce = UILabel.appearance()
+        
+        
+        navBarAppearance.backgroundColor = .myAppBlack
+        navBarAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.myAppWhite]
+        
+        UINavigationBar.appearance().standardAppearance = navBarAppearance
+        
+        UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
+        
+        tapBarAppearance.backgroundColor = .myAppBlackRussian
+        UITabBar.appearance().scrollEdgeAppearance = tapBarAppearance
+        UITabBar.appearance().standardAppearance = tapBarAppearance
+        
+        labelTextAppearnce.textColor = .myAppWhite
+    }
+}
+
+```
+``` swift 
+class AppDelegate: UIResponder, UIApplicationDelegate {
+
+
+
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        AppAppearance.setupAppearance()
+```
+ 
++ 이후로 UIButton의 글자색 또한 흰색으로 고정되는 문제가 발생했는데, 이는 UIButton이 텍스트를 표시하기 위해 UILabel의 객체인 titleLabel이라는 속성을 사용하기 때문이었습니다. 
+
+``` swift 
+ let likeButton = {
+        let button = UIButton.Configuration.roundCornerButton(title: AppStrings.ButtonTitle.addToList, backgroundColor: .myAppBlack, foregroundColor: .myAppWhite, appIcon: AppIcon.plus!)
+        return button
+    }()
+```  
+
++ 전역으로 설정된 UILabel 색을 덮어써야하므로 UIButton 초기화 시점에 원하는 색상을 다시 한번 명시하여 해결했습니다.
+
+``` swift
+    override func configureView() {
+        playButton.tintColor = .myAppBlack
+    }
+```
 
 ## 회고
 <!--
