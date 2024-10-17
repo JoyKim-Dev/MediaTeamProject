@@ -55,12 +55,24 @@
 
 + 선택한 미디어와 비슷한 미디어 목록을 보여줍니다. 
 
-### Technology Stack 
+### 기술스택 
 + Framework : `UIKit`
 + Pattern : `MVVM` + `Input-Output Pattern`, `Alamofire` + `Router Pattern`
 + Library: `RealmSwift`, `RxSwift`, `Alamofire`, `Kingfisher`, `SnapKit` 
 
-### Troubleshooting
+### 주요 기술
++ 아키텍처: RxSwift + MVVM
+  - 비동기 작업과 이벤트 기반 프로그래밍을 간결하게 구현하기 위해 사용했습니다.
+  - UI와 로직을 분리하고 데이터 흐름의 일관성을 유지하면서, 재사용성과 유연성을 높이기 위해 사용했습니다.
++ 네트워크 통신: Alamofire + RouterPattern + ErrorHandling
+  - API 요청을 모듈화해서 유지보수성을 높이고, 여러 API통신을 호출할 때 코드 중복을 줄일수 있었습니다.
+  - 비동기 작업에서 단일 성공 또는 에러 이벤트만을 방출하는 장점인 Single을 활용하여 API통신 및 데이터 처리를 구현했습니다.
+  - Result타입을 사용하여 성공과 실패에 따른 명확한 분기처리를 했습니다.
++ 데이터베이스: RealmSwift
+  - 네트워크 연결 없이 보관함 목록을 조회할 수 있도록 했습니다.
+  - Repository Pattern을 사용하여 데이터 관리 로직을 분리했습니다.
+
+### 트러블슈팅
 
 #### * 문제 상황
 + UIButton의 글자색이 흰색 외 색상으로 변경되지 않는 문제가 발생했습니다.
