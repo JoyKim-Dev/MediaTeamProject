@@ -63,7 +63,7 @@
 
 ## 트러블슈팅
 
-### AppDelegate에서 UIAppearance를 사용하여 반복되는 UI 요소 전역 설정
+### 1. AppDelegate에서 UIAppearance를 사용하여 반복되는 UI 요소 전역 설정
 + 앱의 기본 테마가 검은색 배경이라 흰색 글자를 주로 쓰게 되었는데, 뷰객체를 생성하다보니 매번 흰 글자색을 설정하는 것이 불필요한 코드의 반복으로 느껴졌습니다.
   
 +  일회성으로 필요한 뷰객체가 다수였기 때문에 흰 글자색을 적용한 커스텀 뷰객체를 만들어 재사용을 하는 대신 UIAppearance를 활용하여 UILabel의 기본 글자색을 흰색으로 설정했습니다.
@@ -118,6 +118,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         playButton.tintColor = .myAppBlack
     }
 ```
+
+
+### 2. [ViewController에 코드 가독성이 좋지 못한 문제](https://github.com/JoyKim-Dev/MediaTeamProject/wiki/ViewController%EC%97%90-%EC%BD%94%EB%93%9C-%EA%B0%80%EB%8F%85%EC%84%B1%EC%9D%B4-%EC%A2%8B%EC%A7%80-%EB%AA%BB%ED%95%9C-%EB%AC%B8%EC%A0%9C)
+
+
+### 3. [검색뷰에 TrendingAPI가 무한 호출 되는 현상](https://github.com/JoyKim-Dev/MediaTeamProject/wiki/%EA%B2%80%EC%83%89%EB%B7%B0%EC%97%90-TrendingAPI%EA%B0%80-%EB%AC%B4%ED%95%9C-%ED%98%B8%EC%B6%9C-%EB%90%98%EB%8A%94-%ED%98%84%EC%83%81)
+
+
 
 ## 회고
 <!--
