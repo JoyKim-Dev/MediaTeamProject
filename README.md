@@ -63,62 +63,7 @@
 
 ## 트러블슈팅
 
-### 1. AppDelegate에서 UIAppearance를 사용하여 반복되는 UI 요소 전역 설정
-+ 앱의 기본 테마가 검은색 배경이라 흰색 글자를 주로 쓰게 되었는데, 뷰객체를 생성하다보니 매번 흰 글자색을 설정하는 것이 불필요한 코드의 반복으로 느껴졌습니다.
-  
-+  일회성으로 필요한 뷰객체가 다수였기 때문에 흰 글자색을 적용한 커스텀 뷰객체를 만들어 재사용을 하는 대신 UIAppearance를 활용하여 UILabel의 기본 글자색을 흰색으로 설정했습니다.
-+  이를 구현하기 위해 setupAppearance() 라는 함수를 구현하여 `AppDelegate`에서 호출해 주었습니다.
- ``` swift 
-final class AppAppearance {
-    static func setupAppearance() {
-        
-        let navBarAppearance = UINavigationBarAppearance()
-        let tapBarAppearance = UITabBarAppearance()
-        let labelTextAppearnce = UILabel.appearance()
-        
-        
-        navBarAppearance.backgroundColor = .myAppBlack
-        navBarAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.myAppWhite]
-        
-        UINavigationBar.appearance().standardAppearance = navBarAppearance
-        
-        UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
-        
-        tapBarAppearance.backgroundColor = .myAppBlackRussian
-        UITabBar.appearance().scrollEdgeAppearance = tapBarAppearance
-        UITabBar.appearance().standardAppearance = tapBarAppearance
-        
-        labelTextAppearnce.textColor = .myAppWhite
-    }
-}
-
-```
-``` swift 
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        AppAppearance.setupAppearance()
-```
- 
-+ 이후로 UIButton의 글자색 또한 흰색으로 고정되는 문제가 발생했는데, 이는 UIButton이 텍스트를 표시하기 위해 UILabel의 객체인 titleLabel이라는 속성을 사용하기 때문이었습니다. 
-
-``` swift 
- let likeButton = {
-        let button = UIButton.Configuration.roundCornerButton(title: AppStrings.ButtonTitle.addToList, backgroundColor: .myAppBlack, foregroundColor: .myAppWhite, appIcon: AppIcon.plus!)
-        return button
-    }()
-```  
-
-+ 전역으로 설정된 UILabel 색을 덮어써야하므로 UIButton 초기화 시점에 원하는 색상을 다시 한번 명시하여 해결했습니다.
-
-``` swift
-    override func configureView() {
-        playButton.tintColor = .myAppBlack
-    }
-```
-
+### 1. [반복되는 UI 요소 전역 설정](https://github.com/JoyKim-Dev/MediaTeamProject/wiki/AppDelegate%EC%97%90%EC%84%9C-UIAppearance%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EC%97%AC-%EB%B0%98%EB%B3%B5%EB%90%98%EB%8A%94-UI-%EC%9A%94%EC%86%8C-%EC%A0%84%EC%97%AD-%EC%84%A4%EC%A0%95)
 
 ### 2. [ViewController에 코드 가독성이 좋지 못한 문제](https://github.com/JoyKim-Dev/MediaTeamProject/wiki/ViewController%EC%97%90-%EC%BD%94%EB%93%9C-%EA%B0%80%EB%8F%85%EC%84%B1%EC%9D%B4-%EC%A2%8B%EC%A7%80-%EB%AA%BB%ED%95%9C-%EB%AC%B8%EC%A0%9C)
 
