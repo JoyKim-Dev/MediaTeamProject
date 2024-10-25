@@ -63,7 +63,7 @@
 
 ## 트러블슈팅
 
-### 1. [반복되는 UI 요소 전역 설정](https://github.com/JoyKim-Dev/MediaTeamProject/wiki/AppDelegate%EC%97%90%EC%84%9C-UIAppearance%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EC%97%AC-%EB%B0%98%EB%B3%B5%EB%90%98%EB%8A%94-UI-%EC%9A%94%EC%86%8C-%EC%A0%84%EC%97%AD-%EC%84%A4%EC%A0%95)
+### 1. [반복되는 UI 요소 전역 설정](https://github.com/JoyKim-Dev/MediaTeamProject/wiki/%EB%B0%98%EB%B3%B5%EB%90%98%EB%8A%94-UI-%EC%9A%94%EC%86%8C-%EC%A0%84%EC%97%AD-%EC%84%A4%EC%A0%95)
 
 ### 2. [ViewController에 코드 가독성이 좋지 못한 문제](https://github.com/JoyKim-Dev/MediaTeamProject/wiki/ViewController%EC%97%90-%EC%BD%94%EB%93%9C-%EA%B0%80%EB%8F%85%EC%84%B1%EC%9D%B4-%EC%A2%8B%EC%A7%80-%EB%AA%BB%ED%95%9C-%EB%AC%B8%EC%A0%9C)
 
